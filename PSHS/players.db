@@ -1,140 +1,2796 @@
-[
-  {
-    "name": "Zamokuhle",
-    "surname": "Dlamini",
-    "rating": 865,
-    "chesscom": "Njabs124"
+{
+  "version": 2,
+  "exportedAt": "2026-04-11T20:46:36.777Z",
+  "school": "PSHS",
+  "players": [
+    {
+      "id": "1775939818859yd061c992fg",
+      "name": "Zamokuhle Dlamini",
+      "rating": 865,
+      "chesscom": "Njabs124"
+    },
+    {
+      "id": "1775939818859t50jupn261q",
+      "name": "Ndumiso Sibiya",
+      "rating": 1123,
+      "chesscom": "NdumisoSibiya1"
+    },
+    {
+      "id": "1775939818859b9unjv22gvq",
+      "name": "Atilla Mundell",
+      "rating": 510,
+      "chesscom": "atillamundell"
+    },
+    {
+      "id": "1775939818859lskwdbrysth",
+      "name": "Melokuhle Lushaba",
+      "rating": 684,
+      "chesscom": "Rillkid"
+    },
+    {
+      "id": "1775939818859aw4tzvcc568",
+      "name": "Lwazi Mwandla",
+      "rating": 916,
+      "chesscom": "lwazi_095"
+    },
+    {
+      "id": "1775939818859m2ftfzfs4r9",
+      "name": "Siyamthanda Ndamase",
+      "rating": 815,
+      "chesscom": "-"
+    },
+    {
+      "id": "1775939818859lu5rowsv39p",
+      "name": "Okuhle Doyisa",
+      "rating": 915,
+      "chesscom": "MaDoyisa"
+    },
+    {
+      "id": "1775939818859ak91k8ft2c",
+      "name": "Kuthula Mthimkhulu",
+      "rating": 992,
+      "chesscom": "Kuthula01"
+    },
+    {
+      "id": "17759398188600qr4iiwnc0s",
+      "name": "Sphiwe Ndlovu",
+      "rating": 450,
+      "chesscom": "sphiwendlovu"
+    },
+    {
+      "id": "1775939818860ilapypxra7d",
+      "name": "Mpilwenhle Dlamini",
+      "rating": 816,
+      "chesscom": "Keven_2"
+    },
+    {
+      "id": "17759398188603vggiuvyrhh",
+      "name": "Victor Ndondji",
+      "rating": 100,
+      "chesscom": "-"
+    },
+    {
+      "id": "1775939818860759oej2nqsa",
+      "name": "Sipho Makalima",
+      "rating": 616,
+      "chesscom": "Gift-Makalima-19"
+    },
+    {
+      "id": "17759398188607hmt0hpsh2e",
+      "name": "Lizalise Chagi",
+      "rating": 395,
+      "chesscom": "SpruceSaw2347"
+    },
+    {
+      "id": "1775939818860865mu05cuq",
+      "name": "Keziah Davey",
+      "rating": 220,
+      "chesscom": "KezzieD13"
+    },
+    {
+      "id": "1775939818860i8139859hj",
+      "name": "Luthando Ngcobo",
+      "rating": 676,
+      "chesscom": "Ngcobo-85"
+    },
+    {
+      "id": "1775939818860rvzsgzepjlh",
+      "name": "Diamete Dabibi",
+      "rating": 621,
+      "chesscom": "DamieteDabibi"
+    },
+    {
+      "id": "177593981886097fto5063w",
+      "name": "Nqobile Gumede",
+      "rating": 100,
+      "chesscom": "-"
+    },
+    {
+      "id": "1775939818860rl07cgefg3",
+      "name": "Nkosingiphile Tshabalala",
+      "rating": 516,
+      "chesscom": "Phila245"
+    },
+    {
+      "id": "1775939818860sn53h9a5nhp",
+      "name": "Zothile Tshabalala",
+      "rating": 236,
+      "chesscom": "zozo_mshengu"
+    },
+    {
+      "id": "1775939818860exb6x2nb2r",
+      "name": "Melokuhle Shangase",
+      "rating": 100,
+      "chesscom": "-"
+    },
+    {
+      "id": "17759398188608dttihspmqm",
+      "name": "Kay-Leigh Groenewald",
+      "rating": 100,
+      "chesscom": "-"
+    },
+    {
+      "id": "1775939818860gq4f3z78vl",
+      "name": "Done Goodwin",
+      "rating": 100,
+      "chesscom": "-"
+    },
+    {
+      "id": "17759398188607b27jkv874h",
+      "name": "Neema Makhanya",
+      "rating": 246,
+      "chesscom": "NahNotNemzmwahh"
+    }
+  ],
+  "tournament": {
+    "round": 0,
+    "rounds": [],
+    "byeHistory": [],
+    "localRatings": {
+      "1775939818859yd061c992fg": 865,
+      "1775939818859t50jupn261q": 1123,
+      "1775939818859b9unjv22gvq": 510,
+      "1775939818859lskwdbrysth": 684,
+      "1775939818859aw4tzvcc568": 916,
+      "1775939818859m2ftfzfs4r9": 815,
+      "1775939818859lu5rowsv39p": 915,
+      "1775939818859ak91k8ft2c": 992,
+      "17759398188600qr4iiwnc0s": 450,
+      "1775939818860ilapypxra7d": 816,
+      "17759398188603vggiuvyrhh": 100,
+      "1775939818860759oej2nqsa": 616,
+      "17759398188607hmt0hpsh2e": 395,
+      "1775939818860865mu05cuq": 220,
+      "1775939818860i8139859hj": 676,
+      "1775939818860rvzsgzepjlh": 621,
+      "177593981886097fto5063w": 100,
+      "1775939818860rl07cgefg3": 516,
+      "1775939818860sn53h9a5nhp": 236,
+      "1775939818860exb6x2nb2r": 100,
+      "17759398188608dttihspmqm": 100,
+      "1775939818860gq4f3z78vl": 100,
+      "17759398188607b27jkv874h": 246
+    },
+    "localRatingBase": {
+      "1775939818859yd061c992fg": 865,
+      "1775939818859t50jupn261q": 1123,
+      "1775939818859b9unjv22gvq": 510,
+      "1775939818859lskwdbrysth": 684,
+      "1775939818859aw4tzvcc568": 916,
+      "1775939818859m2ftfzfs4r9": 815,
+      "1775939818859lu5rowsv39p": 915,
+      "1775939818859ak91k8ft2c": 992,
+      "17759398188600qr4iiwnc0s": 450,
+      "1775939818860ilapypxra7d": 816,
+      "17759398188603vggiuvyrhh": 100,
+      "1775939818860759oej2nqsa": 616,
+      "17759398188607hmt0hpsh2e": 395,
+      "1775939818860865mu05cuq": 220,
+      "1775939818860i8139859hj": 676,
+      "1775939818860rvzsgzepjlh": 621,
+      "177593981886097fto5063w": 100,
+      "1775939818860rl07cgefg3": 516,
+      "1775939818860sn53h9a5nhp": 236,
+      "1775939818860exb6x2nb2r": 100,
+      "17759398188608dttihspmqm": 100,
+      "1775939818860gq4f3z78vl": 100,
+      "17759398188607b27jkv874h": 246
+    },
+    "sections": [
+      {
+        "id": "nruoeo",
+        "name": "Section A — 1st Team",
+        "shortName": "Section A",
+        "participants": [
+          {
+            "id": "1775939818859t50jupn261q",
+            "name": "Ndumiso Sibiya",
+            "rating": 1123,
+            "chesscom": "NdumisoSibiya1"
+          },
+          {
+            "id": "1775939818859ak91k8ft2c",
+            "name": "Kuthula Mthimkhulu",
+            "rating": 992,
+            "chesscom": "Kuthula01"
+          },
+          {
+            "id": "1775939818859aw4tzvcc568",
+            "name": "Lwazi Mwandla",
+            "rating": 916,
+            "chesscom": "lwazi_095"
+          },
+          {
+            "id": "1775939818859lu5rowsv39p",
+            "name": "Okuhle Doyisa",
+            "rating": 915,
+            "chesscom": "MaDoyisa"
+          },
+          {
+            "id": "1775939818859yd061c992fg",
+            "name": "Zamokuhle Dlamini",
+            "rating": 865,
+            "chesscom": "Njabs124"
+          },
+          {
+            "id": "1775939818860ilapypxra7d",
+            "name": "Mpilwenhle Dlamini",
+            "rating": 816,
+            "chesscom": "Keven_2"
+          },
+          {
+            "id": "1775939818859m2ftfzfs4r9",
+            "name": "Siyamthanda Ndamase",
+            "rating": 815,
+            "chesscom": "-"
+          },
+          {
+            "id": "1775939818859lskwdbrysth",
+            "name": "Melokuhle Lushaba",
+            "rating": 684,
+            "chesscom": "Rillkid"
+          },
+          {
+            "id": "1775939818860rvzsgzepjlh",
+            "name": "Diamete Dabibi",
+            "rating": 621,
+            "chesscom": "DamieteDabibi"
+          },
+          {
+            "id": "1775939818860759oej2nqsa",
+            "name": "Sipho Makalima",
+            "rating": 616,
+            "chesscom": "Gift-Makalima-19"
+          },
+          {
+            "id": "1775939818859b9unjv22gvq",
+            "name": "Atilla Mundell",
+            "rating": 510,
+            "chesscom": "atillamundell"
+          }
+        ],
+        "rounds": [
+          [
+            {
+              "w": {
+                "id": "1775939818859t50jupn261q",
+                "name": "Ndumiso Sibiya",
+                "rating": 1123,
+                "chesscom": "NdumisoSibiya1"
+              },
+              "b": {
+                "id": "1775939818859ak91k8ft2c",
+                "name": "Kuthula Mthimkhulu",
+                "rating": 992,
+                "chesscom": "Kuthula01"
+              },
+              "result": "0-1"
+            },
+            {
+              "w": {
+                "id": "1775939818859aw4tzvcc568",
+                "name": "Lwazi Mwandla",
+                "rating": 916,
+                "chesscom": "lwazi_095"
+              },
+              "b": {
+                "id": "1775939818859lu5rowsv39p",
+                "name": "Okuhle Doyisa",
+                "rating": 915,
+                "chesscom": "MaDoyisa"
+              },
+              "result": "0-1"
+            },
+            {
+              "w": {
+                "id": "1775939818859yd061c992fg",
+                "name": "Zamokuhle Dlamini",
+                "rating": 865,
+                "chesscom": "Njabs124"
+              },
+              "b": {
+                "id": "1775939818860ilapypxra7d",
+                "name": "Mpilwenhle Dlamini",
+                "rating": 816,
+                "chesscom": "Keven_2"
+              },
+              "result": "0-1"
+            },
+            {
+              "w": {
+                "id": "1775939818859m2ftfzfs4r9",
+                "name": "Siyamthanda Ndamase",
+                "rating": 815,
+                "chesscom": "-"
+              },
+              "b": {
+                "id": "1775939818859lskwdbrysth",
+                "name": "Melokuhle Lushaba",
+                "rating": 684,
+                "chesscom": "Rillkid"
+              },
+              "result": "0-1"
+            },
+            {
+              "w": {
+                "id": "1775939818860rvzsgzepjlh",
+                "name": "Diamete Dabibi",
+                "rating": 621,
+                "chesscom": "DamieteDabibi"
+              },
+              "b": {
+                "id": "1775939818860759oej2nqsa",
+                "name": "Sipho Makalima",
+                "rating": 616,
+                "chesscom": "Gift-Makalima-19"
+              },
+              "result": "0-1"
+            },
+            {
+              "w": {
+                "id": "1775939818859b9unjv22gvq",
+                "name": "Atilla Mundell",
+                "rating": 510,
+                "chesscom": "atillamundell"
+              },
+              "b": "BYE",
+              "result": "1-0"
+            }
+          ]
+        ],
+        "round": 1,
+        "byeHistory": [
+          "Atilla Mundell"
+        ],
+        "localRatings": {
+          "1775939818859t50jupn261q": 1114,
+          "1775939818859ak91k8ft2c": 1003,
+          "1775939818859aw4tzvcc568": 911,
+          "1775939818859lu5rowsv39p": 930,
+          "1775939818859yd061c992fg": 859,
+          "1775939818860ilapypxra7d": 830,
+          "1775939818859m2ftfzfs4r9": 806,
+          "1775939818859lskwdbrysth": 695,
+          "1775939818860rvzsgzepjlh": 616,
+          "1775939818860759oej2nqsa": 631
+        },
+        "localRatingBase": {
+          "1775939818859t50jupn261q": 1123,
+          "1775939818859ak91k8ft2c": 992,
+          "1775939818859aw4tzvcc568": 916,
+          "1775939818859lu5rowsv39p": 915,
+          "1775939818859yd061c992fg": 865,
+          "1775939818860ilapypxra7d": 816,
+          "1775939818859m2ftfzfs4r9": 815,
+          "1775939818859lskwdbrysth": 684,
+          "1775939818860rvzsgzepjlh": 621,
+          "1775939818860759oej2nqsa": 616
+        },
+        "roundMinutes": 20
+      },
+      {
+        "id": "iiqlkt",
+        "name": "Section B — 2nd Team",
+        "shortName": "Section B",
+        "participants": [
+          {
+            "id": "17759398188600qr4iiwnc0s",
+            "name": "Sphiwe Ndlovu",
+            "rating": 450,
+            "chesscom": "sphiwendlovu"
+          },
+          {
+            "id": "17759398188603vggiuvyrhh",
+            "name": "Victor Ndondji",
+            "rating": 100,
+            "chesscom": "-"
+          },
+          {
+            "id": "17759398188607hmt0hpsh2e",
+            "name": "Lizalise Chagi",
+            "rating": 395,
+            "chesscom": "SpruceSaw2347"
+          },
+          {
+            "id": "1775939818860865mu05cuq",
+            "name": "Keziah Davey",
+            "rating": 220,
+            "chesscom": "KezzieD13"
+          },
+          {
+            "id": "1775939818860i8139859hj",
+            "name": "Luthando Ngcobo",
+            "rating": 676,
+            "chesscom": "Ngcobo-85"
+          },
+          {
+            "id": "177593981886097fto5063w",
+            "name": "Nqobile Gumede",
+            "rating": 100,
+            "chesscom": "-"
+          },
+          {
+            "id": "1775939818860rl07cgefg3",
+            "name": "Nkosingiphile Tshabalala",
+            "rating": 516,
+            "chesscom": "Phila245"
+          },
+          {
+            "id": "1775939818860sn53h9a5nhp",
+            "name": "Zothile Tshabalala",
+            "rating": 236,
+            "chesscom": "zozo_mshengu"
+          },
+          {
+            "id": "1775939818860exb6x2nb2r",
+            "name": "Melokuhle Shangase",
+            "rating": 100,
+            "chesscom": "-"
+          },
+          {
+            "id": "17759398188608dttihspmqm",
+            "name": "Kay-Leigh Groenewald",
+            "rating": 100,
+            "chesscom": "-"
+          },
+          {
+            "id": "1775939818860gq4f3z78vl",
+            "name": "Done Goodwin",
+            "rating": 100,
+            "chesscom": "-"
+          },
+          {
+            "id": "17759398188607b27jkv874h",
+            "name": "Neema Makhanya",
+            "rating": 246,
+            "chesscom": "NahNotNemzmwahh"
+          }
+        ],
+        "rounds": [
+          [
+            {
+              "w": {
+                "id": "1775939818860i8139859hj",
+                "name": "Luthando Ngcobo",
+                "rating": 676,
+                "chesscom": "Ngcobo-85"
+              },
+              "b": {
+                "id": "1775939818860rl07cgefg3",
+                "name": "Nkosingiphile Tshabalala",
+                "rating": 516,
+                "chesscom": "Phila245"
+              },
+              "result": "1-0"
+            },
+            {
+              "w": {
+                "id": "17759398188600qr4iiwnc0s",
+                "name": "Sphiwe Ndlovu",
+                "rating": 450,
+                "chesscom": "sphiwendlovu"
+              },
+              "b": {
+                "id": "17759398188607hmt0hpsh2e",
+                "name": "Lizalise Chagi",
+                "rating": 395,
+                "chesscom": "SpruceSaw2347"
+              },
+              "result": "1/2"
+            },
+            {
+              "w": {
+                "id": "17759398188607b27jkv874h",
+                "name": "Neema Makhanya",
+                "rating": 246,
+                "chesscom": "NahNotNemzmwahh"
+              },
+              "b": {
+                "id": "1775939818860sn53h9a5nhp",
+                "name": "Zothile Tshabalala",
+                "rating": 236,
+                "chesscom": "zozo_mshengu"
+              },
+              "result": "1-0"
+            },
+            {
+              "w": {
+                "id": "1775939818860865mu05cuq",
+                "name": "Keziah Davey",
+                "rating": 220,
+                "chesscom": "KezzieD13"
+              },
+              "b": {
+                "id": "17759398188603vggiuvyrhh",
+                "name": "Victor Ndondji",
+                "rating": 100,
+                "chesscom": "-"
+              },
+              "result": "0-1"
+            },
+            {
+              "w": {
+                "id": "177593981886097fto5063w",
+                "name": "Nqobile Gumede",
+                "rating": 100,
+                "chesscom": "-"
+              },
+              "b": {
+                "id": "1775939818860exb6x2nb2r",
+                "name": "Melokuhle Shangase",
+                "rating": 100,
+                "chesscom": "-"
+              },
+              "result": "1-0"
+            },
+            {
+              "w": {
+                "id": "17759398188608dttihspmqm",
+                "name": "Kay-Leigh Groenewald",
+                "rating": 100,
+                "chesscom": "-"
+              },
+              "b": {
+                "id": "1775939818860gq4f3z78vl",
+                "name": "Done Goodwin",
+                "rating": 100,
+                "chesscom": "-"
+              },
+              "result": "0-1"
+            }
+          ],
+          [
+            {
+              "w": {
+                "id": "1775939818860i8139859hj",
+                "name": "Luthando Ngcobo",
+                "rating": 676,
+                "chesscom": "Ngcobo-85"
+              },
+              "b": {
+                "id": "17759398188607b27jkv874h",
+                "name": "Neema Makhanya",
+                "rating": 246,
+                "chesscom": "NahNotNemzmwahh"
+              },
+              "result": "1-0"
+            },
+            {
+              "w": {
+                "id": "17759398188603vggiuvyrhh",
+                "name": "Victor Ndondji",
+                "rating": 100,
+                "chesscom": "-"
+              },
+              "b": {
+                "id": "177593981886097fto5063w",
+                "name": "Nqobile Gumede",
+                "rating": 100,
+                "chesscom": "-"
+              },
+              "result": "0-1"
+            },
+            {
+              "w": {
+                "id": "1775939818860gq4f3z78vl",
+                "name": "Done Goodwin",
+                "rating": 100,
+                "chesscom": "-"
+              },
+              "b": {
+                "id": "17759398188600qr4iiwnc0s",
+                "name": "Sphiwe Ndlovu",
+                "rating": 450,
+                "chesscom": "sphiwendlovu"
+              },
+              "result": "0-1"
+            },
+            {
+              "w": {
+                "id": "17759398188607hmt0hpsh2e",
+                "name": "Lizalise Chagi",
+                "rating": 395,
+                "chesscom": "SpruceSaw2347"
+              },
+              "b": {
+                "id": "1775939818860rl07cgefg3",
+                "name": "Nkosingiphile Tshabalala",
+                "rating": 516,
+                "chesscom": "Phila245"
+              },
+              "result": "1-0"
+            },
+            {
+              "w": {
+                "id": "1775939818860sn53h9a5nhp",
+                "name": "Zothile Tshabalala",
+                "rating": 236,
+                "chesscom": "zozo_mshengu"
+              },
+              "b": {
+                "id": "1775939818860865mu05cuq",
+                "name": "Keziah Davey",
+                "rating": 220,
+                "chesscom": "KezzieD13"
+              },
+              "result": "0-1"
+            },
+            {
+              "w": {
+                "id": "1775939818860exb6x2nb2r",
+                "name": "Melokuhle Shangase",
+                "rating": 100,
+                "chesscom": "-"
+              },
+              "b": {
+                "id": "17759398188608dttihspmqm",
+                "name": "Kay-Leigh Groenewald",
+                "rating": 100,
+                "chesscom": "-"
+              },
+              "result": "1-0"
+            }
+          ],
+          [
+            {
+              "w": {
+                "id": "1775939818860i8139859hj",
+                "name": "Luthando Ngcobo",
+                "rating": 676,
+                "chesscom": "Ngcobo-85"
+              },
+              "b": {
+                "id": "177593981886097fto5063w",
+                "name": "Nqobile Gumede",
+                "rating": 100,
+                "chesscom": "-"
+              },
+              "result": "0-1"
+            },
+            {
+              "w": {
+                "id": "17759398188600qr4iiwnc0s",
+                "name": "Sphiwe Ndlovu",
+                "rating": 450,
+                "chesscom": "sphiwendlovu"
+              },
+              "b": {
+                "id": "17759398188607b27jkv874h",
+                "name": "Neema Makhanya",
+                "rating": 246,
+                "chesscom": "NahNotNemzmwahh"
+              },
+              "result": "0-1"
+            },
+            {
+              "w": {
+                "id": "17759398188607hmt0hpsh2e",
+                "name": "Lizalise Chagi",
+                "rating": 395,
+                "chesscom": "SpruceSaw2347"
+              },
+              "b": {
+                "id": "1775939818860865mu05cuq",
+                "name": "Keziah Davey",
+                "rating": 220,
+                "chesscom": "KezzieD13"
+              },
+              "result": "0-1"
+            },
+            {
+              "w": {
+                "id": "17759398188603vggiuvyrhh",
+                "name": "Victor Ndondji",
+                "rating": 100,
+                "chesscom": "-"
+              },
+              "b": {
+                "id": "1775939818860exb6x2nb2r",
+                "name": "Melokuhle Shangase",
+                "rating": 100,
+                "chesscom": "-"
+              },
+              "result": "0-1"
+            },
+            {
+              "w": {
+                "id": "1775939818860gq4f3z78vl",
+                "name": "Done Goodwin",
+                "rating": 100,
+                "chesscom": "-"
+              },
+              "b": {
+                "id": "1775939818860rl07cgefg3",
+                "name": "Nkosingiphile Tshabalala",
+                "rating": 516,
+                "chesscom": "Phila245"
+              },
+              "result": "0-1"
+            },
+            {
+              "w": {
+                "id": "1775939818860sn53h9a5nhp",
+                "name": "Zothile Tshabalala",
+                "rating": 236,
+                "chesscom": "zozo_mshengu"
+              },
+              "b": {
+                "id": "17759398188608dttihspmqm",
+                "name": "Kay-Leigh Groenewald",
+                "rating": 100,
+                "chesscom": "-"
+              },
+              "result": "0-1"
+            }
+          ]
+        ],
+        "round": 3,
+        "byeHistory": [],
+        "localRatings": {
+          "1775939818860i8139859hj": 656,
+          "177593981886097fto5063w": 120,
+          "17759398188600qr4iiwnc0s": 430,
+          "17759398188607b27jkv874h": 266,
+          "17759398188607hmt0hpsh2e": 376,
+          "1775939818860865mu05cuq": 241,
+          "17759398188603vggiuvyrhh": 81,
+          "1775939818860exb6x2nb2r": 121,
+          "1775939818860gq4f3z78vl": 80,
+          "1775939818860rl07cgefg3": 536,
+          "1775939818860sn53h9a5nhp": 217,
+          "17759398188608dttihspmqm": 121
+        },
+        "localRatingBase": {
+          "1775939818860i8139859hj": 676,
+          "177593981886097fto5063w": 100,
+          "17759398188600qr4iiwnc0s": 450,
+          "17759398188607b27jkv874h": 246,
+          "17759398188607hmt0hpsh2e": 395,
+          "1775939818860865mu05cuq": 220,
+          "17759398188603vggiuvyrhh": 100,
+          "1775939818860exb6x2nb2r": 100,
+          "1775939818860gq4f3z78vl": 100,
+          "1775939818860rl07cgefg3": 516,
+          "1775939818860sn53h9a5nhp": 236,
+          "17759398188608dttihspmqm": 100
+        },
+        "roundMinutes": 20
+      }
+    ],
+    "activeSection": 0,
+    "simultaneousTimer": true
   },
-  {
-    "name": "Ndumiso",
-    "surname": "Sibiya",
-    "rating": 1123,
-    "chesscom": "NdumisoSibiya1"
-  },
-  {
-    "name": "Atilla",
-    "surname": "Mundell",
-    "rating": 510,
-    "chesscom": "atillamundell"
-  },
-  {
-    "name": "Melokuhle",
-    "surname": "Lushaba",
-    "rating": 684,
-    "chesscom": "Rillkid"
-  },
-  {
-    "name": "Lwazi",
-    "surname": "Mwandla",
-    "rating": 916,
-    "chesscom": "lwazi_095"
-  },
-  {
-    "name": "Siyamthanda",
-    "surname": "Ndamase",
-    "rating": 100,
-    "chesscom": ""
-  },
-  {
-    "name": "Okuhle",
-    "surname": "Doyisa",
-    "rating": 644,
-    "chesscom": "MaDoyisa"
-  },
-  {
-    "name": "Kuthula",
-    "surname": "Mthimkhulu",
-    "rating": 992,
-    "chesscom": "Kuthula01"
-  },
-  {
-    "name": "Sphiwe",
-    "surname": "Ndlovu",
-    "rating": 450,
-    "chesscom": "sphiwendlovu"
-  },
-  {
-    "name": "Mpilwenhle",
-    "surname": "Dlamini",
-    "rating": 816,
-    "chesscom": "Keven_2"
-  },
-  {
-    "name": "Victor",
-    "surname": "Ndondji",
-    "rating": 100,
-    "chesscom": ""
-  },
-  {
-    "name": "Sipho",
-    "surname": "Makalima",
-    "rating": 616,
-    "chesscom": "Gift-Makalima-19"
-  },
-  {
-    "name": "Lizalise",
-    "surname": "Chagi",
-    "rating": 395,
-    "chesscom": "SpruceSaw2347"
-  },
-  {
-    "name": "Keziah",
-    "surname": "Davey",
-    "rating": 220,
-    "chesscom": "KezzieD13"
-  },
-  {
-    "name": "Luthando",
-    "surname": "Ngcobo",
-    "rating": 676,
-    "chesscom": "Ngcobo-85"
-  },
-  {
-    "name": "Diamete",
-    "surname": "Dabibi",
-    "rating": 621,
-    "chesscom": "DamieteDabibi"
-  },
-  {
-    "name": "Nqobile",
-    "surname": "Gumede",
-    "rating": 100,
-    "chesscom": ""
-  },
-  {
-    "name": "Nkosingiphile",
-    "surname": "Tshabalala",
-    "rating": 516,
-    "chesscom": "Phila245"
-  },
-  {
-    "name": "Zothile",
-    "surname": "Tshabalala",
-    "rating": 236,
-    "chesscom": "zozo_mshengu"
-  },
-  {
-    "name": "Melokuhle",
-    "surname": "Shangase",
-    "rating": 100,
-    "chesscom": ""
-  },
-  {
-    "name": "Kay-Leigh",
-    "surname": "Groenewald",
-    "rating": 100,
-    "chesscom": ""
-  },
-  {
-    "name": "Done",
-    "surname": "Goodwin",
-    "rating": 100,
-    "chesscom": ""
-  },
-  {
-    "name": "Neema",
-    "surname": "Makhanya",
-    "rating": 246,
-    "chesscom": "NahNotNemzmwahh"
+  "clusters": [
+    {
+      "id": "nruoeo",
+      "name": "1st Team",
+      "color": "#c9a84c",
+      "playerIds": [
+        "1775939818859t50jupn261q",
+        "1775939818859ak91k8ft2c",
+        "1775939818859aw4tzvcc568",
+        "1775939818859lu5rowsv39p",
+        "1775939818859yd061c992fg",
+        "1775939818860ilapypxra7d",
+        "1775939818859m2ftfzfs4r9",
+        "1775939818859lskwdbrysth",
+        "1775939818860rvzsgzepjlh",
+        "1775939818860759oej2nqsa",
+        "1775939818859b9unjv22gvq"
+      ]
+    },
+    {
+      "id": "iiqlkt",
+      "name": "2nd Team",
+      "color": "#5ba85e",
+      "playerIds": [
+        "17759398188600qr4iiwnc0s",
+        "17759398188603vggiuvyrhh",
+        "17759398188607hmt0hpsh2e",
+        "1775939818860865mu05cuq",
+        "1775939818860i8139859hj",
+        "177593981886097fto5063w",
+        "1775939818860rl07cgefg3",
+        "1775939818860sn53h9a5nhp",
+        "1775939818860exb6x2nb2r",
+        "17759398188608dttihspmqm",
+        "1775939818860gq4f3z78vl",
+        "17759398188607b27jkv874h"
+      ]
+    }
+  ],
+  "insightsCache": {
+    "1775939818859yd061c992fg": {
+      "profile": {
+        "player_id": 444129087,
+        "@id": "https://api.chess.com/pub/player/njabs124",
+        "url": "https://www.chess.com/member/Njabs124",
+        "username": "njabs124",
+        "followers": 6,
+        "country": "https://api.chess.com/pub/country/ZA",
+        "last_online": 1775913014,
+        "joined": 1744456555,
+        "status": "basic",
+        "is_streamer": false,
+        "verified": false,
+        "league": "Champion",
+        "streaming_platforms": []
+      },
+      "stats": {
+        "chess_daily": {
+          "last": {
+            "rating": 490,
+            "date": 1775196896,
+            "rd": 260
+          },
+          "best": {
+            "rating": 523,
+            "date": 1748940043,
+            "game": "https://www.chess.com/game/daily/820951502"
+          },
+          "record": {
+            "win": 1,
+            "loss": 1,
+            "draw": 0,
+            "time_per_move": 11605,
+            "timeout_percent": 0
+          }
+        },
+        "chess_rapid": {
+          "last": {
+            "rating": 689,
+            "date": 1775666986,
+            "rd": 55
+          },
+          "best": {
+            "rating": 739,
+            "date": 1773420895,
+            "game": "https://www.chess.com/game/live/166522212557"
+          },
+          "record": {
+            "win": 32,
+            "loss": 35,
+            "draw": 8
+          }
+        },
+        "chess_bullet": {
+          "last": {
+            "rating": 426,
+            "date": 1773585614,
+            "rd": 78
+          },
+          "best": {
+            "rating": 658,
+            "date": 1744485919,
+            "game": "https://www.chess.com/game/live/149851692023"
+          },
+          "record": {
+            "win": 70,
+            "loss": 68,
+            "draw": 2
+          }
+        },
+        "chess_blitz": {
+          "last": {
+            "rating": 465,
+            "date": 1775072663,
+            "rd": 59
+          },
+          "best": {
+            "rating": 864,
+            "date": 1744460677,
+            "game": "https://www.chess.com/game/live/151837082329"
+          },
+          "record": {
+            "win": 110,
+            "loss": 121,
+            "draw": 8
+          }
+        },
+        "fide": 0,
+        "tactics": {
+          "highest": {
+            "rating": 1449,
+            "date": 1762282556
+          },
+          "lowest": {
+            "rating": 1365,
+            "date": 1758215788
+          }
+        },
+        "puzzle_rush": {
+          "best": {
+            "total_attempts": 20,
+            "score": 17
+          }
+        }
+      },
+      "growthData": [
+        {
+          "label": "Nov 25",
+          "rating": 476
+        },
+        {
+          "label": "Dec 25",
+          "rating": 476
+        },
+        {
+          "label": "Jan 26",
+          "rating": 476
+        },
+        {
+          "label": "Feb 26",
+          "rating": 677
+        },
+        {
+          "label": "Mar 26",
+          "rating": 728
+        },
+        {
+          "label": "Apr 26",
+          "rating": 689
+        }
+      ],
+      "insight": {
+        "color": "green",
+        "label": "Growing",
+        "delta": 213
+      },
+      "chessRating": 465,
+      "avatar": null,
+      "fetchedAt": 1775939820669
+    },
+    "1775939818859t50jupn261q": {
+      "profile": {
+        "avatar": "https://images.chesscomfiles.com/uploads/v1/user/383639713.be69cc63.200x200o.4afee510d06e.jpg",
+        "player_id": 383639713,
+        "@id": "https://api.chess.com/pub/player/ndumisosibiya1",
+        "url": "https://www.chess.com/member/NdumisoSibiya1",
+        "username": "ndumisosibiya1",
+        "followers": 11,
+        "country": "https://api.chess.com/pub/country/ZA",
+        "last_online": 1775657927,
+        "joined": 1724780258,
+        "status": "basic",
+        "is_streamer": false,
+        "verified": false,
+        "league": "Champion",
+        "streaming_platforms": []
+      },
+      "stats": {
+        "chess_daily": {
+          "last": {
+            "rating": 855,
+            "date": 1754342328,
+            "rd": 157
+          },
+          "best": {
+            "rating": 1033,
+            "date": 1736709010,
+            "game": "https://www.chess.com/game/daily/751697119"
+          },
+          "record": {
+            "win": 6,
+            "loss": 6,
+            "draw": 0,
+            "time_per_move": 45323,
+            "timeout_percent": 0
+          }
+        },
+        "chess_rapid": {
+          "last": {
+            "rating": 1067,
+            "date": 1775325991,
+            "rd": 52
+          },
+          "best": {
+            "rating": 1218,
+            "date": 1750191469,
+            "game": "https://www.chess.com/game/live/139707704006"
+          },
+          "record": {
+            "win": 298,
+            "loss": 259,
+            "draw": 27
+          }
+        },
+        "chess_bullet": {
+          "last": {
+            "rating": 650,
+            "date": 1757751118,
+            "rd": 83
+          },
+          "best": {
+            "rating": 861,
+            "date": 1726922461,
+            "game": "https://www.chess.com/game/live/138607747076"
+          },
+          "record": {
+            "win": 14,
+            "loss": 23,
+            "draw": 1
+          }
+        },
+        "chess_blitz": {
+          "last": {
+            "rating": 807,
+            "date": 1770393429,
+            "rd": 70
+          },
+          "best": {
+            "rating": 1215,
+            "date": 1726906624,
+            "game": "https://www.chess.com/game/live/139261339044"
+          },
+          "record": {
+            "win": 71,
+            "loss": 65,
+            "draw": 6
+          }
+        },
+        "fide": 0,
+        "tactics": {
+          "highest": {
+            "rating": 1583,
+            "date": 1769979200
+          },
+          "lowest": {
+            "rating": 1484,
+            "date": 1757941805
+          }
+        },
+        "puzzle_rush": {}
+      },
+      "growthData": [
+        {
+          "label": "Sept 25",
+          "rating": 1136
+        },
+        {
+          "label": "Oct 25",
+          "rating": 1106
+        },
+        {
+          "label": "Jan 26",
+          "rating": 1050
+        },
+        {
+          "label": "Feb 26",
+          "rating": 1035
+        },
+        {
+          "label": "Mar 26",
+          "rating": 1027
+        },
+        {
+          "label": "Apr 26",
+          "rating": 1067
+        }
+      ],
+      "insight": {
+        "color": "red",
+        "label": "Declining",
+        "delta": -69
+      },
+      "chessRating": 1067,
+      "avatar": "https://images.chesscomfiles.com/uploads/v1/user/383639713.be69cc63.200x200o.4afee510d06e.jpg",
+      "fetchedAt": 1775939820665
+    },
+    "1775939818859b9unjv22gvq": {
+      "profile": {
+        "avatar": "https://images.chesscomfiles.com/uploads/v1/user/218266061.9851a179.200x200o.3fc52be39607.png",
+        "player_id": 218266061,
+        "@id": "https://api.chess.com/pub/player/atillamundell",
+        "url": "https://www.chess.com/member/atillamundell",
+        "name": "Atilla Mundell",
+        "username": "atillamundell",
+        "followers": 3,
+        "country": "https://api.chess.com/pub/country/ZA",
+        "last_online": 1775928869,
+        "joined": 1672413823,
+        "status": "basic",
+        "is_streamer": false,
+        "verified": false,
+        "league": "Stone",
+        "streaming_platforms": []
+      },
+      "stats": {
+        "chess_rapid": {
+          "last": {
+            "rating": 544,
+            "date": 1775387314,
+            "rd": 37
+          },
+          "best": {
+            "rating": 987,
+            "date": 1672414050,
+            "game": "https://www.chess.com/game/live/91267760549"
+          },
+          "record": {
+            "win": 93,
+            "loss": 92,
+            "draw": 13
+          }
+        },
+        "chess_bullet": {
+          "last": {
+            "rating": 674,
+            "date": 1774889761,
+            "rd": 140
+          },
+          "best": {
+            "rating": 1041,
+            "date": 1672414316,
+            "game": "https://www.chess.com/game/live/166638884982"
+          },
+          "record": {
+            "win": 1,
+            "loss": 5,
+            "draw": 0
+          }
+        },
+        "chess_blitz": {
+          "last": {
+            "rating": 240,
+            "date": 1775916016,
+            "rd": 45
+          },
+          "best": {
+            "rating": 303,
+            "date": 1770391508,
+            "game": "https://www.chess.com/game/live/164880587945"
+          },
+          "record": {
+            "win": 37,
+            "loss": 45,
+            "draw": 3
+          }
+        },
+        "fide": 0,
+        "tactics": {
+          "highest": {
+            "rating": 1260,
+            "date": 1771749881
+          },
+          "lowest": {
+            "rating": 393,
+            "date": 1765092175
+          }
+        },
+        "puzzle_rush": {}
+      },
+      "growthData": [
+        {
+          "label": "Jul 24",
+          "rating": 431
+        },
+        {
+          "label": "Dec 25",
+          "rating": 456
+        },
+        {
+          "label": "Jan 26",
+          "rating": 138
+        },
+        {
+          "label": "Feb 26",
+          "rating": 442
+        },
+        {
+          "label": "Mar 26",
+          "rating": 497
+        },
+        {
+          "label": "Apr 26",
+          "rating": 240
+        }
+      ],
+      "insight": {
+        "color": "red",
+        "label": "Declining",
+        "delta": -191
+      },
+      "chessRating": 544,
+      "avatar": "https://images.chesscomfiles.com/uploads/v1/user/218266061.9851a179.200x200o.3fc52be39607.png",
+      "fetchedAt": 1775939820352
+    },
+    "1775939818859lskwdbrysth": {
+      "profile": {
+        "avatar": "https://images.chesscomfiles.com/uploads/v1/user/449807292.84209074.200x200o.b0e051e26af1.jpg",
+        "player_id": 449807292,
+        "@id": "https://api.chess.com/pub/player/rillkid",
+        "url": "https://www.chess.com/member/Rillkid",
+        "name": "Melokuhle Lushaba",
+        "username": "rillkid",
+        "followers": 7,
+        "country": "https://api.chess.com/pub/country/ZA",
+        "last_online": 1773741454,
+        "joined": 1746476757,
+        "status": "basic",
+        "is_streamer": false,
+        "verified": false,
+        "league": "Bronze",
+        "streaming_platforms": []
+      },
+      "stats": {
+        "chess_daily": {
+          "last": {
+            "rating": 637,
+            "date": 1757827085,
+            "rd": 286
+          },
+          "best": {
+            "rating": 637,
+            "date": 1757827085,
+            "game": "https://www.chess.com/game/daily/855446670"
+          },
+          "record": {
+            "win": 1,
+            "loss": 0,
+            "draw": 0,
+            "time_per_move": 81521,
+            "timeout_percent": 0
+          }
+        },
+        "chess_rapid": {
+          "last": {
+            "rating": 300,
+            "date": 1773739309,
+            "rd": 76
+          },
+          "best": {
+            "rating": 506,
+            "date": 1757572751,
+            "game": "https://www.chess.com/game/live/142982649374"
+          },
+          "record": {
+            "win": 14,
+            "loss": 15,
+            "draw": 0
+          }
+        },
+        "chess_bullet": {
+          "last": {
+            "rating": 208,
+            "date": 1773741436,
+            "rd": 106
+          },
+          "best": {
+            "rating": 220,
+            "date": 1752954920,
+            "game": "https://www.chess.com/game/live/142655754432"
+          },
+          "record": {
+            "win": 9,
+            "loss": 8,
+            "draw": 0
+          }
+        },
+        "chess_blitz": {
+          "last": {
+            "rating": 390,
+            "date": 1771003401,
+            "rd": 112
+          },
+          "best": {
+            "rating": 390,
+            "date": 1771003401,
+            "game": "https://www.chess.com/game/live/164643308596"
+          },
+          "record": {
+            "win": 9,
+            "loss": 6,
+            "draw": 1
+          }
+        },
+        "fide": 0,
+        "tactics": {
+          "highest": {
+            "rating": 1442,
+            "date": 1756040173
+          },
+          "lowest": {
+            "rating": 1281,
+            "date": 1756971524
+          }
+        },
+        "puzzle_rush": {}
+      },
+      "growthData": [
+        {
+          "label": "Aug 25",
+          "rating": 378
+        },
+        {
+          "label": "Sept 25",
+          "rating": 637
+        },
+        {
+          "label": "Oct 25",
+          "rating": 190
+        },
+        {
+          "label": "Dec 25",
+          "rating": 506
+        },
+        {
+          "label": "Feb 26",
+          "rating": 390
+        },
+        {
+          "label": "Mar 26",
+          "rating": 208
+        }
+      ],
+      "insight": {
+        "color": "red",
+        "label": "Declining",
+        "delta": -170
+      },
+      "chessRating": 300,
+      "avatar": "https://images.chesscomfiles.com/uploads/v1/user/449807292.84209074.200x200o.b0e051e26af1.jpg",
+      "fetchedAt": 1775939820666
+    },
+    "1775939818859aw4tzvcc568": {
+      "profile": {
+        "player_id": 180500823,
+        "@id": "https://api.chess.com/pub/player/lwazi_095",
+        "url": "https://www.chess.com/member/lwazi_095",
+        "username": "lwazi_095",
+        "followers": 2,
+        "country": "https://api.chess.com/pub/country/ZA",
+        "last_online": 1758944449,
+        "joined": 1650032847,
+        "status": "basic",
+        "is_streamer": false,
+        "verified": false,
+        "league": "Elite",
+        "streaming_platforms": []
+      },
+      "stats": {
+        "chess_daily": {
+          "last": {
+            "rating": 823,
+            "date": 1673562168,
+            "rd": 337
+          },
+          "record": {
+            "win": 0,
+            "loss": 2,
+            "draw": 0,
+            "time_per_move": 13486,
+            "timeout_percent": 0
+          }
+        },
+        "chess_rapid": {
+          "last": {
+            "rating": 822,
+            "date": 1753624496,
+            "rd": 71
+          },
+          "best": {
+            "rating": 982,
+            "date": 1650033427,
+            "game": "https://www.chess.com/game/live/86196544963"
+          },
+          "record": {
+            "win": 77,
+            "loss": 77,
+            "draw": 12
+          }
+        },
+        "chess_bullet": {
+          "last": {
+            "rating": 362,
+            "date": 1748545146,
+            "rd": 80
+          },
+          "best": {
+            "rating": 734,
+            "date": 1713445136,
+            "game": "https://www.chess.com/game/live/138965892586"
+          },
+          "record": {
+            "win": 5,
+            "loss": 14,
+            "draw": 0
+          }
+        },
+        "chess_blitz": {
+          "last": {
+            "rating": 795,
+            "date": 1747760753,
+            "rd": 284
+          },
+          "record": {
+            "win": 0,
+            "loss": 1,
+            "draw": 0
+          }
+        },
+        "fide": 0,
+        "tactics": {
+          "highest": {
+            "rating": 1460,
+            "date": 1650032847
+          },
+          "lowest": {
+            "rating": 1460,
+            "date": 1650032847
+          }
+        },
+        "puzzle_rush": {
+          "best": {
+            "total_attempts": 17,
+            "score": 14
+          }
+        }
+      },
+      "growthData": [
+        {
+          "label": "Aug 23",
+          "rating": 913
+        },
+        {
+          "label": "Sept 23",
+          "rating": 901
+        },
+        {
+          "label": "Feb 24",
+          "rating": 872
+        },
+        {
+          "label": "Apr 24",
+          "rating": 618
+        },
+        {
+          "label": "May 25",
+          "rating": 843
+        },
+        {
+          "label": "Jul 25",
+          "rating": 822
+        }
+      ],
+      "insight": {
+        "color": "red",
+        "label": "Declining",
+        "delta": -91
+      },
+      "chessRating": 822,
+      "avatar": null,
+      "fetchedAt": 1775939821488
+    },
+    "1775939818859lu5rowsv39p": {
+      "profile": {
+        "player_id": 363571135,
+        "@id": "https://api.chess.com/pub/player/madoyisa",
+        "url": "https://www.chess.com/member/MaDoyisa",
+        "username": "madoyisa",
+        "followers": 2,
+        "country": "https://api.chess.com/pub/country/ZA",
+        "last_online": 1763926253,
+        "joined": 1715876285,
+        "status": "basic",
+        "is_streamer": false,
+        "verified": false,
+        "league": "Legend",
+        "streaming_platforms": []
+      },
+      "stats": {
+        "chess_daily": {
+          "last": {
+            "rating": 800,
+            "date": 1755891611,
+            "rd": 350
+          },
+          "record": {
+            "win": 1,
+            "loss": 3,
+            "draw": 0,
+            "time_per_move": 45024,
+            "timeout_percent": 0
+          }
+        },
+        "chess_rapid": {
+          "last": {
+            "rating": 755,
+            "date": 1763926369,
+            "rd": 44
+          },
+          "best": {
+            "rating": 894,
+            "date": 1751483953,
+            "game": "https://www.chess.com/game/live/140300019610"
+          },
+          "record": {
+            "win": 643,
+            "loss": 583,
+            "draw": 52
+          }
+        },
+        "chess_blitz": {
+          "last": {
+            "rating": 600,
+            "date": 1746720852,
+            "rd": 344
+          },
+          "record": {
+            "win": 0,
+            "loss": 1,
+            "draw": 0
+          }
+        },
+        "fide": 0,
+        "tactics": {
+          "highest": {
+            "rating": 756,
+            "date": 1763906246
+          },
+          "lowest": {
+            "rating": 461,
+            "date": 1762539236
+          }
+        },
+        "puzzle_rush": {}
+      },
+      "growthData": [
+        {
+          "label": "Jun 25",
+          "rating": 739
+        },
+        {
+          "label": "Jul 25",
+          "rating": 782
+        },
+        {
+          "label": "Aug 25",
+          "rating": 761
+        },
+        {
+          "label": "Sept 25",
+          "rating": 731
+        },
+        {
+          "label": "Oct 25",
+          "rating": 755
+        },
+        {
+          "label": "Nov 25",
+          "rating": 755
+        }
+      ],
+      "insight": {
+        "color": "yellow",
+        "label": "Stable",
+        "delta": 16
+      },
+      "chessRating": 755,
+      "avatar": null,
+      "fetchedAt": 1775939821911
+    },
+    "1775939818859ak91k8ft2c": {
+      "profile": {
+        "avatar": "https://images.chesscomfiles.com/uploads/v1/user/438348823.db81dd57.200x200o.62d201a71e2d.png",
+        "player_id": 438348823,
+        "@id": "https://api.chess.com/pub/player/kuthula01",
+        "url": "https://www.chess.com/member/Kuthula01",
+        "username": "kuthula01",
+        "followers": 26,
+        "country": "https://api.chess.com/pub/country/ZA",
+        "last_online": 1775934186,
+        "joined": 1742473285,
+        "status": "basic",
+        "is_streamer": false,
+        "verified": false,
+        "league": "Legend",
+        "streaming_platforms": []
+      },
+      "stats": {
+        "chess_daily": {
+          "last": {
+            "rating": 480,
+            "date": 1772895492,
+            "rd": 233
+          },
+          "best": {
+            "rating": 1217,
+            "date": 1753474894,
+            "game": "https://www.chess.com/game/daily/838327248"
+          },
+          "record": {
+            "win": 1,
+            "loss": 4,
+            "draw": 0,
+            "time_per_move": 37714,
+            "timeout_percent": 0
+          }
+        },
+        "chess_rapid": {
+          "last": {
+            "rating": 1011,
+            "date": 1775934185,
+            "rd": 30
+          },
+          "best": {
+            "rating": 1096,
+            "date": 1769785123,
+            "game": "https://www.chess.com/game/live/147347193624"
+          },
+          "record": {
+            "win": 1486,
+            "loss": 1476,
+            "draw": 89
+          }
+        },
+        "chess_bullet": {
+          "last": {
+            "rating": 951,
+            "date": 1775659342,
+            "rd": 28
+          },
+          "best": {
+            "rating": 976,
+            "date": 1775216484,
+            "game": "https://www.chess.com/game/live/169475444593"
+          },
+          "record": {
+            "win": 603,
+            "loss": 546,
+            "draw": 17
+          }
+        },
+        "chess_blitz": {
+          "last": {
+            "rating": 772,
+            "date": 1775219380,
+            "rd": 38
+          },
+          "best": {
+            "rating": 789,
+            "date": 1774729864,
+            "game": "https://www.chess.com/game/live/166560518308"
+          },
+          "record": {
+            "win": 250,
+            "loss": 209,
+            "draw": 12
+          }
+        },
+        "fide": 0,
+        "tactics": {
+          "highest": {
+            "rating": 1353,
+            "date": 1766591164
+          },
+          "lowest": {
+            "rating": 1169,
+            "date": 1763472730
+          }
+        },
+        "puzzle_rush": {
+          "best": {
+            "total_attempts": 16,
+            "score": 13
+          }
+        }
+      },
+      "growthData": [
+        {
+          "label": "Nov 25",
+          "rating": 923
+        },
+        {
+          "label": "Dec 25",
+          "rating": 739
+        },
+        {
+          "label": "Jan 26",
+          "rating": 671
+        },
+        {
+          "label": "Feb 26",
+          "rating": 963
+        },
+        {
+          "label": "Mar 26",
+          "rating": 1025
+        },
+        {
+          "label": "Apr 26",
+          "rating": 1011
+        }
+      ],
+      "insight": {
+        "color": "green",
+        "label": "Growing",
+        "delta": 88
+      },
+      "chessRating": 1011,
+      "avatar": "https://images.chesscomfiles.com/uploads/v1/user/438348823.db81dd57.200x200o.62d201a71e2d.png",
+      "fetchedAt": 1775939822043
+    },
+    "17759398188600qr4iiwnc0s": {
+      "profile": {
+        "avatar": "https://images.chesscomfiles.com/uploads/v1/user/250429265.b30322a3.200x200o.893cc8a4cc2d.jpg",
+        "player_id": 250429265,
+        "@id": "https://api.chess.com/pub/player/sphiwendlovu",
+        "url": "https://www.chess.com/member/sphiwendlovu",
+        "username": "sphiwendlovu",
+        "followers": 8,
+        "country": "https://api.chess.com/pub/country/ZA",
+        "last_online": 1775846844,
+        "joined": 1677006731,
+        "status": "basic",
+        "is_streamer": false,
+        "verified": false,
+        "league": "Champion",
+        "streaming_platforms": []
+      },
+      "stats": {
+        "chess_daily": {
+          "last": {
+            "rating": 400,
+            "date": 1762287643,
+            "rd": 350
+          },
+          "record": {
+            "win": 1,
+            "loss": 0,
+            "draw": 0,
+            "time_per_move": 25357,
+            "timeout_percent": 0
+          }
+        },
+        "chess_rapid": {
+          "last": {
+            "rating": 598,
+            "date": 1775835855,
+            "rd": 38
+          },
+          "best": {
+            "rating": 607,
+            "date": 1774625652,
+            "game": "https://www.chess.com/game/live/165895769402"
+          },
+          "record": {
+            "win": 275,
+            "loss": 231,
+            "draw": 8
+          }
+        },
+        "chess_bullet": {
+          "last": {
+            "rating": 120,
+            "date": 1771766316,
+            "rd": 81
+          },
+          "best": {
+            "rating": 324,
+            "date": 1753976384,
+            "game": "https://www.chess.com/game/live/145695476800"
+          },
+          "record": {
+            "win": 13,
+            "loss": 17,
+            "draw": 1
+          }
+        },
+        "chess_blitz": {
+          "last": {
+            "rating": 277,
+            "date": 1774877006,
+            "rd": 58
+          },
+          "best": {
+            "rating": 299,
+            "date": 1772722878,
+            "game": "https://www.chess.com/game/live/164704790439"
+          },
+          "record": {
+            "win": 62,
+            "loss": 57,
+            "draw": 2
+          }
+        },
+        "fide": 0,
+        "tactics": {
+          "highest": {
+            "rating": 681,
+            "date": 1757260620
+          },
+          "lowest": {
+            "rating": 374,
+            "date": 1758874379
+          }
+        },
+        "puzzle_rush": {
+          "best": {
+            "total_attempts": 9,
+            "score": 6
+          }
+        }
+      },
+      "growthData": [
+        {
+          "label": "Nov 25",
+          "rating": 177
+        },
+        {
+          "label": "Dec 25",
+          "rating": 430
+        },
+        {
+          "label": "Jan 26",
+          "rating": 406
+        },
+        {
+          "label": "Feb 26",
+          "rating": 289
+        },
+        {
+          "label": "Mar 26",
+          "rating": 582
+        },
+        {
+          "label": "Apr 26",
+          "rating": 598
+        }
+      ],
+      "insight": {
+        "color": "green",
+        "label": "Growing",
+        "delta": 421
+      },
+      "chessRating": 598,
+      "avatar": "https://images.chesscomfiles.com/uploads/v1/user/250429265.b30322a3.200x200o.893cc8a4cc2d.jpg",
+      "fetchedAt": 1775939821914
+    },
+    "1775939818860ilapypxra7d": {
+      "profile": {
+        "player_id": 526972353,
+        "@id": "https://api.chess.com/pub/player/keven_2",
+        "url": "https://www.chess.com/member/keven_2",
+        "username": "keven_2",
+        "followers": 3,
+        "country": "https://api.chess.com/pub/country/ZA",
+        "last_online": 1773418205,
+        "joined": 1770307930,
+        "status": "basic",
+        "is_streamer": false,
+        "verified": false,
+        "league": "Bronze",
+        "streaming_platforms": []
+      },
+      "stats": {
+        "chess_rapid": {
+          "last": {
+            "rating": 999,
+            "date": 1773416341,
+            "rd": 40
+          },
+          "best": {
+            "rating": 1354,
+            "date": 1770384817,
+            "game": "https://www.chess.com/game/live/164395636592"
+          },
+          "record": {
+            "win": 32,
+            "loss": 59,
+            "draw": 4
+          }
+        },
+        "chess_bullet": {
+          "last": {
+            "rating": 1083,
+            "date": 1773414549,
+            "rd": 148
+          },
+          "best": {
+            "rating": 1288,
+            "date": 1770749980,
+            "game": "https://www.chess.com/game/live/164508322468"
+          },
+          "record": {
+            "win": 1,
+            "loss": 4,
+            "draw": 0
+          }
+        },
+        "chess_blitz": {
+          "last": {
+            "rating": 1050,
+            "date": 1770392353,
+            "rd": 118
+          },
+          "best": {
+            "rating": 1223,
+            "date": 1770390415,
+            "game": "https://www.chess.com/game/live/164703590805"
+          },
+          "record": {
+            "win": 2,
+            "loss": 5,
+            "draw": 1
+          }
+        },
+        "fide": 0,
+        "tactics": {
+          "highest": {
+            "rating": 400,
+            "date": 1770307957
+          },
+          "lowest": {
+            "rating": 400,
+            "date": 1770307957
+          }
+        },
+        "puzzle_rush": {}
+      },
+      "growthData": [
+        {
+          "label": "Feb 26",
+          "rating": 1081
+        },
+        {
+          "label": "Mar 26",
+          "rating": 999
+        }
+      ],
+      "insight": {
+        "color": "red",
+        "label": "Declining",
+        "delta": -82
+      },
+      "chessRating": 999,
+      "avatar": null,
+      "fetchedAt": 1775939822986
+    },
+    "1775939818860759oej2nqsa": {
+      "profile": {
+        "player_id": 452044998,
+        "@id": "https://api.chess.com/pub/player/gift-makalima-19",
+        "url": "https://www.chess.com/member/Gift-Makalima-19",
+        "username": "gift-makalima-19",
+        "followers": 1,
+        "country": "https://api.chess.com/pub/country/ZA",
+        "last_online": 1775759826,
+        "joined": 1747327786,
+        "status": "basic",
+        "is_streamer": false,
+        "verified": false,
+        "league": "Bronze",
+        "streaming_platforms": []
+      },
+      "stats": {
+        "chess_rapid": {
+          "last": {
+            "rating": 702,
+            "date": 1775232818,
+            "rd": 83
+          },
+          "best": {
+            "rating": 746,
+            "date": 1775230017,
+            "game": "https://www.chess.com/game/live/169543246535"
+          },
+          "record": {
+            "win": 14,
+            "loss": 8,
+            "draw": 0
+          }
+        },
+        "chess_bullet": {
+          "last": {
+            "rating": 445,
+            "date": 1747591620,
+            "rd": 247
+          },
+          "record": {
+            "win": 0,
+            "loss": 1,
+            "draw": 0
+          }
+        },
+        "chess_blitz": {
+          "last": {
+            "rating": 315,
+            "date": 1747593413,
+            "rd": 202
+          },
+          "record": {
+            "win": 0,
+            "loss": 2,
+            "draw": 0
+          }
+        },
+        "fide": 0,
+        "tactics": {
+          "highest": {
+            "rating": 1340,
+            "date": 1774203747
+          },
+          "lowest": {
+            "rating": 1269,
+            "date": 1769365099
+          }
+        },
+        "puzzle_rush": {
+          "best": {
+            "total_attempts": 19,
+            "score": 16
+          }
+        }
+      },
+      "growthData": [
+        {
+          "label": "May 25",
+          "rating": 584
+        },
+        {
+          "label": "Feb 26",
+          "rating": 662
+        },
+        {
+          "label": "Apr 26",
+          "rating": 702
+        }
+      ],
+      "insight": {
+        "color": "green",
+        "label": "Growing",
+        "delta": 118
+      },
+      "chessRating": 702,
+      "avatar": null,
+      "fetchedAt": 1775939823067
+    },
+    "17759398188607hmt0hpsh2e": {
+      "profile": {
+        "avatar": "https://images.chesscomfiles.com/uploads/v1/user/474486734.26c093a7.200x200o.cc0009046fec.jpg",
+        "player_id": 474486734,
+        "@id": "https://api.chess.com/pub/player/sprucesaw2347",
+        "url": "https://www.chess.com/member/SpruceSaw2347",
+        "username": "sprucesaw2347",
+        "followers": 7,
+        "country": "https://api.chess.com/pub/country/ZA",
+        "last_online": 1775927084,
+        "joined": 1755190695,
+        "status": "basic",
+        "is_streamer": false,
+        "verified": false,
+        "league": "Elite",
+        "streaming_platforms": []
+      },
+      "stats": {
+        "chess_daily": {
+          "last": {
+            "rating": 1179,
+            "date": 1775574854,
+            "rd": 275
+          },
+          "best": {
+            "rating": 1179,
+            "date": 1775574854,
+            "game": "https://www.chess.com/game/daily/951142031"
+          },
+          "record": {
+            "win": 2,
+            "loss": 0,
+            "draw": 0,
+            "time_per_move": 70214,
+            "timeout_percent": 0
+          }
+        },
+        "chess_rapid": {
+          "last": {
+            "rating": 473,
+            "date": 1775838783,
+            "rd": 37
+          },
+          "best": {
+            "rating": 509,
+            "date": 1755621604,
+            "game": "https://www.chess.com/game/live/166666065766"
+          },
+          "record": {
+            "win": 88,
+            "loss": 67,
+            "draw": 11
+          }
+        },
+        "chess_bullet": {
+          "last": {
+            "rating": 100,
+            "date": 1772207762,
+            "rd": 247
+          },
+          "record": {
+            "win": 0,
+            "loss": 1,
+            "draw": 0
+          }
+        },
+        "chess_blitz": {
+          "last": {
+            "rating": 264,
+            "date": 1774681105,
+            "rd": 63
+          },
+          "best": {
+            "rating": 492,
+            "date": 1769275096,
+            "game": "https://www.chess.com/game/live/164190789842"
+          },
+          "record": {
+            "win": 18,
+            "loss": 19,
+            "draw": 6
+          }
+        },
+        "fide": 0,
+        "tactics": {
+          "highest": {
+            "rating": 749,
+            "date": 1757002616
+          },
+          "lowest": {
+            "rating": 271,
+            "date": 1757002697
+          }
+        },
+        "puzzle_rush": {}
+      },
+      "growthData": [
+        {
+          "label": "Nov 25",
+          "rating": 225
+        },
+        {
+          "label": "Dec 25",
+          "rating": 387
+        },
+        {
+          "label": "Jan 26",
+          "rating": 385
+        },
+        {
+          "label": "Feb 26",
+          "rating": 251
+        },
+        {
+          "label": "Mar 26",
+          "rating": 441
+        },
+        {
+          "label": "Apr 26",
+          "rating": 473
+        }
+      ],
+      "insight": {
+        "color": "green",
+        "label": "Growing",
+        "delta": 248
+      },
+      "chessRating": 473,
+      "avatar": "https://images.chesscomfiles.com/uploads/v1/user/474486734.26c093a7.200x200o.cc0009046fec.jpg",
+      "fetchedAt": 1775939823092
+    },
+    "1775939818860865mu05cuq": {
+      "profile": {
+        "player_id": 526175917,
+        "@id": "https://api.chess.com/pub/player/kezzied13",
+        "url": "https://www.chess.com/member/KezzieD13",
+        "username": "kezzied13",
+        "followers": 1,
+        "country": "https://api.chess.com/pub/country/ZA",
+        "last_online": 1775934400,
+        "joined": 1770128443,
+        "status": "basic",
+        "is_streamer": false,
+        "verified": false,
+        "league": "Silver",
+        "streaming_platforms": []
+      },
+      "stats": {
+        "chess_rapid": {
+          "last": {
+            "rating": 141,
+            "date": 1774988153,
+            "rd": 79
+          },
+          "best": {
+            "rating": 178,
+            "date": 1774549823,
+            "game": "https://www.chess.com/game/live/166460333710"
+          },
+          "record": {
+            "win": 7,
+            "loss": 16,
+            "draw": 3
+          }
+        },
+        "chess_blitz": {
+          "last": {
+            "rating": 100,
+            "date": 1772559188,
+            "rd": 266
+          },
+          "record": {
+            "win": 0,
+            "loss": 2,
+            "draw": 0
+          }
+        },
+        "fide": 0,
+        "tactics": {
+          "highest": {
+            "rating": 590,
+            "date": 1775498733
+          },
+          "lowest": {
+            "rating": 275,
+            "date": 1770264082
+          }
+        },
+        "puzzle_rush": {}
+      },
+      "growthData": [
+        {
+          "label": "Feb 26",
+          "rating": 100
+        },
+        {
+          "label": "Mar 26",
+          "rating": 141
+        },
+        {
+          "label": "Apr 26",
+          "rating": 141
+        }
+      ],
+      "insight": {
+        "color": "green",
+        "label": "Growing",
+        "delta": 41
+      },
+      "chessRating": 141,
+      "avatar": null,
+      "fetchedAt": 1775939823070
+    },
+    "1775939818860i8139859hj": {
+      "profile": {
+        "player_id": 530116817,
+        "@id": "https://api.chess.com/pub/player/ngcobo-85",
+        "url": "https://www.chess.com/member/ngcobo-85",
+        "username": "ngcobo-85",
+        "followers": 1,
+        "country": "https://api.chess.com/pub/country/ZA",
+        "last_online": 1772211575,
+        "joined": 1770998773,
+        "status": "basic",
+        "is_streamer": false,
+        "verified": false,
+        "league": "Wood",
+        "streaming_platforms": []
+      },
+      "stats": {
+        "chess_rapid": {
+          "last": {
+            "rating": 952,
+            "date": 1772209999,
+            "rd": 150
+          },
+          "record": {
+            "win": 0,
+            "loss": 6,
+            "draw": 0
+          }
+        },
+        "fide": 0,
+        "tactics": {
+          "highest": {
+            "rating": 400,
+            "date": 1770999244
+          },
+          "lowest": {
+            "rating": 400,
+            "date": 1770999244
+          }
+        },
+        "puzzle_rush": {}
+      },
+      "growthData": [
+        {
+          "label": "Feb 26",
+          "rating": 952
+        }
+      ],
+      "insight": {
+        "color": "yellow",
+        "label": "Insufficient data",
+        "delta": null
+      },
+      "chessRating": 952,
+      "avatar": null,
+      "fetchedAt": 1775939824203
+    },
+    "1775939818860rvzsgzepjlh": {
+      "profile": {
+        "player_id": 523695463,
+        "@id": "https://api.chess.com/pub/player/damietedabibi",
+        "url": "https://www.chess.com/member/DamieteDabibi",
+        "username": "damietedabibi",
+        "followers": 10,
+        "country": "https://api.chess.com/pub/country/ZA",
+        "last_online": 1775916027,
+        "joined": 1769539090,
+        "status": "basic",
+        "is_streamer": false,
+        "verified": false,
+        "league": "Legend",
+        "streaming_platforms": []
+      },
+      "stats": {
+        "chess_daily": {
+          "last": {
+            "rating": 1203,
+            "date": 1775574854,
+            "rd": 331
+          },
+          "record": {
+            "win": 1,
+            "loss": 1,
+            "draw": 0,
+            "time_per_move": 61102,
+            "timeout_percent": 0
+          }
+        },
+        "chess_rapid": {
+          "last": {
+            "rating": 765,
+            "date": 1775841193,
+            "rd": 27
+          },
+          "best": {
+            "rating": 1336,
+            "date": 1769539495,
+            "game": "https://www.chess.com/game/live/166618217285"
+          },
+          "record": {
+            "win": 187,
+            "loss": 202,
+            "draw": 11
+          }
+        },
+        "chess_bullet": {
+          "last": {
+            "rating": 752,
+            "date": 1775916027,
+            "rd": 63
+          },
+          "best": {
+            "rating": 895,
+            "date": 1773313757,
+            "game": "https://www.chess.com/game/live/169454439809"
+          },
+          "record": {
+            "win": 17,
+            "loss": 16,
+            "draw": 0
+          }
+        },
+        "chess_blitz": {
+          "last": {
+            "rating": 486,
+            "date": 1775317180,
+            "rd": 32
+          },
+          "best": {
+            "rating": 748,
+            "date": 1770391410,
+            "game": "https://www.chess.com/game/live/164704788287"
+          },
+          "record": {
+            "win": 82,
+            "loss": 82,
+            "draw": 7
+          }
+        },
+        "fide": 0,
+        "tactics": {
+          "highest": {
+            "rating": 1198,
+            "date": 1775574943
+          },
+          "lowest": {
+            "rating": 400,
+            "date": 1769539139
+          }
+        },
+        "puzzle_rush": {
+          "best": {
+            "total_attempts": 13,
+            "score": 10
+          }
+        }
+      },
+      "growthData": [
+        {
+          "label": "Jan 26",
+          "rating": 1155
+        },
+        {
+          "label": "Feb 26",
+          "rating": 704
+        },
+        {
+          "label": "Mar 26",
+          "rating": 690
+        },
+        {
+          "label": "Apr 26",
+          "rating": 752
+        }
+      ],
+      "insight": {
+        "color": "red",
+        "label": "Declining",
+        "delta": -403
+      },
+      "chessRating": 765,
+      "avatar": null,
+      "fetchedAt": 1775939824598
+    },
+    "1775939818860rl07cgefg3": {
+      "profile": {
+        "avatar": "https://images.chesscomfiles.com/uploads/v1/user/521635517.2d021edf.200x200o.68a32fd30b54.jpg",
+        "player_id": 521635517,
+        "@id": "https://api.chess.com/pub/player/phila245",
+        "url": "https://www.chess.com/member/Phila245",
+        "username": "phila245",
+        "followers": 10,
+        "country": "https://api.chess.com/pub/country/ZA",
+        "last_online": 1775234106,
+        "joined": 1769016755,
+        "status": "basic",
+        "is_streamer": false,
+        "verified": false,
+        "league": "Crystal",
+        "streaming_platforms": []
+      },
+      "stats": {
+        "chess_daily": {
+          "last": {
+            "rating": 400,
+            "date": 1773940251,
+            "rd": 350
+          },
+          "record": {
+            "win": 2,
+            "loss": 0,
+            "draw": 0,
+            "time_per_move": 974,
+            "timeout_percent": 0
+          }
+        },
+        "chess_rapid": {
+          "last": {
+            "rating": 282,
+            "date": 1775233536,
+            "rd": 41
+          },
+          "best": {
+            "rating": 415,
+            "date": 1771002110,
+            "game": "https://www.chess.com/game/live/166641021522"
+          },
+          "record": {
+            "win": 52,
+            "loss": 61,
+            "draw": 3
+          }
+        },
+        "chess_bullet": {
+          "last": {
+            "rating": 129,
+            "date": 1774680401,
+            "rd": 89
+          },
+          "best": {
+            "rating": 279,
+            "date": 1772649451,
+            "game": "https://www.chess.com/game/live/165510561454"
+          },
+          "record": {
+            "win": 5,
+            "loss": 10,
+            "draw": 0
+          }
+        },
+        "chess_blitz": {
+          "last": {
+            "rating": 272,
+            "date": 1774681038,
+            "rd": 118
+          },
+          "best": {
+            "rating": 556,
+            "date": 1770577451,
+            "game": "https://www.chess.com/game/live/164418117074"
+          },
+          "record": {
+            "win": 3,
+            "loss": 5,
+            "draw": 0
+          }
+        },
+        "fide": 0,
+        "tactics": {
+          "highest": {
+            "rating": 1268,
+            "date": 1775011094
+          },
+          "lowest": {
+            "rating": 400,
+            "date": 1769017265
+          }
+        },
+        "puzzle_rush": {
+          "best": {
+            "total_attempts": 11,
+            "score": 8
+          }
+        }
+      },
+      "growthData": [
+        {
+          "label": "Jan 26",
+          "rating": 389
+        },
+        {
+          "label": "Feb 26",
+          "rating": 368
+        },
+        {
+          "label": "Mar 26",
+          "rating": 315
+        },
+        {
+          "label": "Apr 26",
+          "rating": 282
+        }
+      ],
+      "insight": {
+        "color": "red",
+        "label": "Declining",
+        "delta": -107
+      },
+      "chessRating": 282,
+      "avatar": "https://images.chesscomfiles.com/uploads/v1/user/521635517.2d021edf.200x200o.68a32fd30b54.jpg",
+      "fetchedAt": 1775939824236
+    },
+    "1775939818860sn53h9a5nhp": {
+      "profile": {
+        "avatar": "https://images.chesscomfiles.com/uploads/v1/user/522645381.1155166b.200x200o.8abc7eb76ab3.jpg",
+        "player_id": 522645381,
+        "@id": "https://api.chess.com/pub/player/zozo_mshengu",
+        "url": "https://www.chess.com/member/zozo_mshengu",
+        "username": "zozo_mshengu",
+        "followers": 5,
+        "country": "https://api.chess.com/pub/country/ZA",
+        "last_online": 1775914205,
+        "joined": 1769273391,
+        "status": "basic",
+        "is_streamer": false,
+        "verified": false,
+        "league": "Crystal",
+        "streaming_platforms": []
+      },
+      "stats": {
+        "chess_daily": {
+          "last": {
+            "rating": 400,
+            "date": 1773940251,
+            "rd": 350
+          },
+          "record": {
+            "win": 0,
+            "loss": 1,
+            "draw": 0,
+            "time_per_move": 25,
+            "timeout_percent": 100
+          }
+        },
+        "chess_rapid": {
+          "last": {
+            "rating": 232,
+            "date": 1775834614,
+            "rd": 36
+          },
+          "best": {
+            "rating": 391,
+            "date": 1769330184,
+            "game": "https://www.chess.com/game/live/168497069237"
+          },
+          "record": {
+            "win": 58,
+            "loss": 96,
+            "draw": 15
+          }
+        },
+        "chess_bullet": {
+          "last": {
+            "rating": 100,
+            "date": 1773491039,
+            "rd": 206
+          },
+          "record": {
+            "win": 0,
+            "loss": 2,
+            "draw": 0
+          }
+        },
+        "chess_blitz": {
+          "last": {
+            "rating": 181,
+            "date": 1773494598,
+            "rd": 94
+          },
+          "best": {
+            "rating": 226,
+            "date": 1770391777,
+            "game": "https://www.chess.com/game/live/167807414507"
+          },
+          "record": {
+            "win": 6,
+            "loss": 14,
+            "draw": 0
+          }
+        },
+        "fide": 0,
+        "tactics": {
+          "highest": {
+            "rating": 818,
+            "date": 1775828914
+          },
+          "lowest": {
+            "rating": 100,
+            "date": 1769887110
+          }
+        },
+        "puzzle_rush": {}
+      },
+      "growthData": [
+        {
+          "label": "Jan 26",
+          "rating": 252
+        },
+        {
+          "label": "Feb 26",
+          "rating": 323
+        },
+        {
+          "label": "Mar 26",
+          "rating": 223
+        },
+        {
+          "label": "Apr 26",
+          "rating": 232
+        }
+      ],
+      "insight": {
+        "color": "yellow",
+        "label": "Stable",
+        "delta": -20
+      },
+      "chessRating": 232,
+      "avatar": "https://images.chesscomfiles.com/uploads/v1/user/522645381.1155166b.200x200o.8abc7eb76ab3.jpg",
+      "fetchedAt": 1775939823892
+    },
+    "17759398188607b27jkv874h": {
+      "profile": {
+        "avatar": "https://images.chesscomfiles.com/uploads/v1/user/526279187.b8308f5f.200x200o.53fc3a289e22.jpg",
+        "player_id": 526279187,
+        "@id": "https://api.chess.com/pub/player/nahnotnemzmwahh",
+        "url": "https://www.chess.com/member/NahNotNemzmwahh",
+        "name": "Nemzasaurus😛",
+        "username": "nahnotnemzmwahh",
+        "followers": 4,
+        "country": "https://api.chess.com/pub/country/ZA",
+        "last_online": 1775936581,
+        "joined": 1770144925,
+        "status": "basic",
+        "is_streamer": false,
+        "verified": false,
+        "league": "Silver",
+        "streaming_platforms": []
+      },
+      "stats": {
+        "chess_rapid": {
+          "last": {
+            "rating": 218,
+            "date": 1775837861,
+            "rd": 62
+          },
+          "best": {
+            "rating": 264,
+            "date": 1771605661,
+            "game": "https://www.chess.com/game/live/166525816131"
+          },
+          "record": {
+            "win": 15,
+            "loss": 24,
+            "draw": 7
+          }
+        },
+        "chess_blitz": {
+          "last": {
+            "rating": 100,
+            "date": 1771094426,
+            "rd": 192
+          },
+          "record": {
+            "win": 0,
+            "loss": 3,
+            "draw": 0
+          }
+        },
+        "fide": 0,
+        "tactics": {
+          "highest": {
+            "rating": 592,
+            "date": 1774469695
+          },
+          "lowest": {
+            "rating": 331,
+            "date": 1771093281
+          }
+        },
+        "puzzle_rush": {}
+      },
+      "growthData": [
+        {
+          "label": "Feb 26",
+          "rating": 173
+        },
+        {
+          "label": "Mar 26",
+          "rating": 202
+        },
+        {
+          "label": "Apr 26",
+          "rating": 218
+        }
+      ],
+      "insight": {
+        "color": "green",
+        "label": "Growing",
+        "delta": 45
+      },
+      "chessRating": 218,
+      "avatar": "https://images.chesscomfiles.com/uploads/v1/user/526279187.b8308f5f.200x200o.53fc3a289e22.jpg",
+      "fetchedAt": 1775939827672
+    }
   }
-]
+}
