@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-download-and-launch-setup"
+description = "Enables the download_and_launch_setup command without any pre-configured scope."
+commands.allow = ["download_and_launch_setup"]
+
+[[permission]]
+identifier = "deny-download-and-launch-setup"
+description = "Denies the download_and_launch_setup command without any pre-configured scope."
+commands.deny = ["download_and_launch_setup"]

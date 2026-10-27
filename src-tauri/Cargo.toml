@@ -1,0 +1,49 @@
+[package]
+name = "chess-coach-utility"
+version = "5.1.0"
+description = "Chess Coach Utility"
+authors = ["Armiel Pillay"]
+license = ""
+repository = ""
+edition = "2021"
+rust-version = "1.77.2"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "ccu_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.6.3", features = [] }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+log = "0.4"
+tauri = { version = "2.11.3", features = ["custom-protocol"] }
+tauri-plugin-log = "2"
+tauri-plugin-opener = "2"
+tauri-plugin-oauth = "2"
+tauri-plugin-google-auth = "0.5"
+# Stable per-machine id; derived from the OS so it survives reinstalls. Used
+# to bind an activation licence to this device.
+machine-uid = "0.5"
+# Blocking HTTP client for the in-app updater, exactly like ref/v4.0.2:
+# downloads the Windows installer with progress events. default-features
+# off + tls keeps the TLS stack minimal (rustls).
+ureq = { version = "2", default-features = false, features = ["tls"] }
+
+# Release builds are optimised for maximum speed: single codegen unit
+# enables full LTO, opt-level "3" maximises both Rust and LLVM speed,
+# panic=abort drops unwinding machinery, and strip removes debug symbols.
+# Keeps the portable Windows exe and Linux binary near ~15MB.
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = 3
+panic = "abort"
+strip = true
+
+[patch.crates-io]
+tauri-plugin-google-auth = { path = "../patches/tauri-plugin-google-auth" }

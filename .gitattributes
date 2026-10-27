@@ -1,0 +1,10 @@
+# Linguist configuration
+# Docs and documentation files
+docs/ docs
+*.md docs
+README.md docs
+rules.md docs
+
+# Generated schemas and configs
+gen/schemas/ generated
+*.gen.ts generated

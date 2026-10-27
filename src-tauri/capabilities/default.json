@@ -1,0 +1,17 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "enables the default permissions",
+  "windows": [
+    "main"
+  ],
+  "permissions": [
+    "core:default",
+    "opener:default",
+    "oauth:allow-start",
+    "oauth:allow-cancel",
+    "google-auth:default",
+    "allow-download-and-launch-setup",
+    "allow-device-id"
+  ]
+}

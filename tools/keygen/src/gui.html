@@ -1,0 +1,1206 @@
+<!doctype html>
+<html lang="en" style="zoom:1.25">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CCU · Activation Key Generator</title>
+<style>
+  :root {
+    --bg: #0e0e0f;
+    --surface: #161618;
+    --surface2: #1e1e21;
+    --surface3: #27272b;
+    --border: #2e2e33;
+    --border2: #3a3a40;
+    --gold: #f4f4f2;
+    --gold-light: #ffffff;
+    --gold-dim: #9a9a94;
+    --cream: #f0e6c8;
+    --text: #ddd8cc;
+    --text-muted: #7a7870;
+    --text-dim: #4a4844;
+    --radius: 6px;
+    --win: #5aaa7a;
+    --loss: #c06060;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  /* No scrollbars anywhere (kept scrollable, just invisible). */
+  ::-webkit-scrollbar { display: none; width: 0; height: 0; }
+  * { scrollbar-width: none; }
+
+  html, body { height: 100%; }
+  body {
+    font-family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(145deg, #2a0a0a 0%, #221515 48%, #10090b 100%) fixed;
+    color: var(--text);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Ambient background (welcome) ──
+     Note: WebKitGTK rasterises filter:blur()/backdrop-filter in software on
+     most Linux setups, so any animated or blurred full-window layer causes
+     severe lag. The gradient + layered radial highlights below are painted
+     once and stay static — zero per-frame cost. */
+  .wlc-orb-bg { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+  .wlc-orb-bg::before {
+    content: ''; position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 12% 8%, rgba(124,0,0,.35) 0%, transparent 42%),
+      radial-gradient(circle at 88% 92%, rgba(188,64,64,.22) 0%, transparent 45%),
+      radial-gradient(circle at 82% 6%, rgba(251,127,127,.12) 0%, transparent 30%);
+  }
+
+  /* ── Brand header (welcome) ── */
+  .wlc-logo-fixed {
+    position: relative; z-index: 10;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 40px 24px 0; flex-shrink: 0;
+  }
+  .wlc-logo { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .wlc-logo-icon {
+    font-size: 3rem; color: var(--gold);
+    line-height: 1;
+    cursor: pointer;
+    filter: drop-shadow(0 0 22px rgba(255,255,255,.28));
+    transition: transform .2s, opacity .2s;
+  }
+  .wlc-logo-icon:hover { transform: scale(1.12); opacity: .92; }
+  .wlc-logo-text {
+    font-size: 1.7rem; font-weight: 800;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .wlc-logo-sub {
+    font-size: .65rem; text-transform: uppercase; letter-spacing: 3px;
+    color: rgba(255,255,255,.3);
+  }
+
+  /* ── Welcome step layout ── */
+  .welcome-wrap {
+    position: relative; z-index: 1;
+    width: 100%; max-width: 1100px; margin: 0 auto;
+    flex: 1; min-height: 0;
+    display: flex; flex-direction: column;
+    padding: 14px 28px 8px;
+    overflow-x: hidden; overflow-y: auto;
+  }
+  .wlc-step { width: 100%; max-width: 1100px; display: flex; flex-direction: column; flex: 1; min-height: 0; animation: stepSlideIn .456s ease forwards; }
+  @keyframes stepSlideIn { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+  .wlc-step-title { font-size: 1.15rem; font-weight: 700; color: var(--cream); text-align: center; margin-top: 32px; margin-bottom: 6px; }
+  .wlc-step-sub { font-size: .82rem; color: var(--text-muted); text-align: center; margin-bottom: 24px; line-height: 1.55; }
+  .wlc-school-controls { flex-shrink: 0; }
+
+  /* ── School / Coaching mode toggle ── */
+  .wlc-mode-toggle {
+    display: flex; gap: 6px; align-self: center;
+    background: rgba(255,255,255,.06);
+    padding: 4px; border-radius: 10px;
+    border: 1px solid rgba(255,255,255,.10);
+    margin-bottom: 18px; flex-shrink: 0;
+  }
+  .mode-btn {
+    padding: 8px 20px; border: none; border-radius: 8px;
+    background: transparent; color: var(--text-muted);
+    font-size: .76rem; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; cursor: pointer; font-family: inherit;
+    transition: background .18s, color .18s;
+  }
+  .mode-btn:hover { color: var(--cream); }
+  .mode-btn.active { background: var(--gold); color: #1a1400; }
+
+  /* ── Coaching business panel ── */
+  .coach-mode {
+    display: flex; flex-direction: column; align-items: stretch;
+    max-width: 480px; margin: 0 auto; width: 100%; text-align: center;
+  }
+  .coach-mode .wlc-step-title,
+  .coach-mode .wlc-step-sub { text-align: center; }
+  .coach-mode .coach-field { width: 100%; margin: 4px 0 14px; text-align: left; }
+  .coach-mode .coach-hint {
+    font-size: .74rem; color: var(--text-dim); margin-bottom: 16px;
+    line-height: 1.5;
+  }
+  .coach-issue { margin-top: 2px; }
+
+  /* ── Search + district filter (welcome) ── */
+  .wlc-school-search-wrap { display: flex; gap: 12px; width: 100%; margin-bottom: 18px; }
+  .wlc-school-search-field { flex: 1; min-width: 220px; position: relative; }
+  .wlc-school-search {
+    width: 100%; padding: 14px 20px 14px 46px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.13);
+    border-radius: 14px; color: #f0e6c8; font-size: .92rem;
+    outline: none; transition: border-color .2s, box-shadow .2s;
+    font-family: inherit;
+  }
+  .wlc-school-search:focus { border-color: rgba(255,255,255,.48); box-shadow: 0 0 0 3px rgba(255,255,255,.08); }
+  .wlc-school-search::placeholder { color: rgba(255,255,255,.25); }
+  .wlc-school-search-icon {
+    position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
+    font-size: 1.05rem; opacity: .35; color: #f0e6c8; pointer-events: none;
+  }
+  .wlc-field {
+    width: 100%; padding: 11px 14px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.13);
+    border-radius: 10px; color: #f0e6c8; font-size: .9rem;
+    outline: none; font-family: inherit; cursor: pointer;
+    transition: border-color .18s;
+    -webkit-appearance: none; appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23f0e6c8' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 34px;
+  }
+  .wlc-field:focus { border-color: rgba(255,255,255,.48); }
+  .wlc-field option { background: #1e1e21; color: #f0e6c8; }
+  .wlc-school-filter-select { min-width: 160px; flex-shrink: 0; }
+
+  /* ── School list — mirrors the app's welcome selector. Up to 14 schools
+     (7 per row × 2 rows — e.g. UGU fills 7+7); more than 14 switches to
+     the two-row horizontal carousel (the app's "All Districts" view). ── */
+  .wlc-school-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 10px;
+    padding: 8px 4px 12px; width: 100%; margin: 0 auto;
+    transition: opacity .25s;
+    flex-shrink: 0;
+  }
+  .wlc-school-grid.filtering { opacity: .35; }
+  .wlc-school-grid.carousel {
+    display: flex; flex-flow: column wrap; gap: 10px;
+    height: 330px; overflow-x: auto; overflow-y: hidden;
+    padding: 8px 4px 12px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  @keyframes schoolCardIn {
+    from { opacity: 0; transform: translateY(6px) scale(.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .wlc-school-card {
+    border-radius: 16px; padding: 14px 10px 8px;
+    cursor: pointer; text-align: center;
+    display: flex; flex-direction: column; align-items: center;
+    gap: 4px; justify-content: center;
+    background: rgba(255,255,255,.045);
+    border: 1px solid rgba(255,255,255,.08);
+    animation: schoolCardIn .38s ease both;
+    transition: transform .25s, border-color .25s, background .25s, box-shadow .25s;
+    aspect-ratio: 1;
+    user-select: none;
+  }
+  .wlc-school-grid.carousel .wlc-school-card { width: 150px; flex-shrink: 0; }
+  .wlc-school-card:hover {
+    background: rgba(255,255,255,.07);
+    border-color: rgba(255,255,255,.24);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(0,0,0,.2);
+  }
+  .wlc-school-card.sel {
+    background: rgba(255,255,255,.1);
+    border-color: var(--gold-dim);
+    box-shadow: 0 0 0 1px rgba(255,255,255,.2), 0 6px 20px rgba(0,0,0,.15);
+  }
+  .wlc-school-card .school-logo {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.08);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; overflow: hidden;
+    transition: border-color .25s, transform .25s;
+  }
+  .wlc-school-card:hover .school-logo { transform: scale(1.08); }
+  .wlc-school-card.sel .school-logo {
+    border-color: var(--gold-dim);
+    transform: scale(1.08);
+  }
+  .wlc-school-card .school-logo img {
+    width: 100%; height: 100%; object-fit: contain;
+    opacity: 0; transition: opacity .25s ease;
+  }
+  .wlc-school-card .school-logo img.loaded { opacity: 1; }
+  .wlc-school-card .school-logo .placeholder {
+    width: 100%; height: 100%; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.15rem; font-weight: 700;
+  }
+  .wlc-school-card .school-name {
+    font-size: .76rem; font-weight: 600; color: var(--text);
+    line-height: 1.3; max-width: 100%; word-break: break-word;
+    height: 2.6em; overflow: hidden;
+  }
+  .wlc-school-card.sel .school-name { color: var(--gold); }
+  .wlc-school-card .school-district {
+    font-size: .6rem; color: var(--text-dim);
+    padding: 3px 10px; border-radius: 12px;
+    background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.06);
+  }
+  .wlc-school-empty {
+    grid-column: 1 / -1;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column;
+    min-height: 148px;
+    text-align: center;
+    color: var(--text-dim);
+  }
+  .wlc-school-grid.carousel .wlc-school-empty {
+    grid-column: unset; flex-shrink: 0; width: 100%;
+  }
+  .wlc-school-empty .empty-icon { font-size: 2rem; opacity: .2; display: block; margin-bottom: 10px; }
+  .wlc-school-empty .empty-text { font-size: .85rem; opacity: .65; }
+
+  /* Selected-school badge (app parity) */
+  .wlc-school-badge-wrap {
+    display: flex; justify-content: center;
+    padding: 14px 0 4px; flex-shrink: 0; min-height: 0;
+  }
+  .wlc-school-selected-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 24px;
+    padding: 6px 18px 6px 8px;
+    font-size: .85rem; color: var(--gold);
+    font-weight: 500; cursor: pointer;
+    animation: badgePop .35s cubic-bezier(.34,1.56,.64,1);
+  }
+  .wlc-school-selected-badge:empty { display: none; }
+  @keyframes badgePop {
+    from { transform: scale(.88); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  .wlc-school-selected-badge .badge-logo {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.08);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; flex-shrink: 0;
+  }
+  .wlc-school-selected-badge .badge-logo img { width: 100%; height: 100%; object-fit: contain; }
+  .wlc-school-selected-badge .badge-cross {
+    cursor: pointer; opacity: .35; margin-left: 4px;
+    background: none; border: none; color: inherit; font-size: .85em;
+    transition: opacity .15s;
+  }
+  .wlc-school-selected-badge .badge-cross:hover { opacity: .8; }
+  .wlc-school-skeleton {
+    display: flex; gap: 12px;
+  }
+  .wlc-school-skeleton .sk-card {
+    border-radius: 16px; aspect-ratio: 1;
+    flex-shrink: 0; width: 150px;
+    background: rgba(255,255,255,.04);
+    animation: skPulse 1.5s ease-in-out infinite;
+  }
+  @keyframes skPulse { 0%,100% { opacity: .35; } 50% { opacity: .1; } }
+
+  /* Narrow windows: the 7-column grid shrinks the columns, so compact the
+     card content (same compacting the app applies on small screens). */
+  @media (max-width: 980px) {
+    .wlc-school-card { padding: 10px 6px 6px; gap: 3px; }
+    .wlc-school-card .school-logo { width: 44px; height: 44px; }
+    .wlc-school-card .school-logo .placeholder { font-size: 1rem; }
+    .wlc-school-card .school-name { font-size: .65rem; }
+  }
+
+  /* ── Modal (product key dialog language) ── */
+  .prodkey-overlay {
+    position: fixed; inset: 0; z-index: 9000;
+    background: rgba(0,0,0,.72);
+    display: none; align-items: center; justify-content: center;
+    padding: 16px;
+  }
+  .prodkey-overlay.open { display: flex; animation: prodkeyFadeIn .22s ease both; }
+  @keyframes prodkeyFadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .prodkey-dialog {
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    border-radius: 18px;
+    padding: 26px 26px 20px;
+    width: 440px; max-width: 94vw;
+    position: relative;
+    box-shadow: 0 28px 70px rgba(0,0,0,.6);
+  }
+  .prodkey-dialog::before {
+    content: ''; position: absolute; inset: -1px; border-radius: 19px;
+    background: linear-gradient(135deg, rgba(255,255,255,.15) 0%, transparent 55%);
+    pointer-events: none;
+  }
+  .prodkey-header {
+    display: flex; align-items: center; gap: 14px; margin-bottom: 16px;
+    position: relative;
+  }
+  .modal-logo {
+    width: 52px; height: 52px; border-radius: 50%; flex-shrink: 0;
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.08);
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.15rem; font-weight: 700;
+  }
+  .modal-logo img { width: 100%; height: 100%; object-fit: contain; }
+  .prodkey-titles { flex: 1; min-width: 0; }
+  .prodkey-title { font-size: 1.05rem; font-weight: 700; color: var(--cream); }
+  .prodkey-subtitle { font-size: .72rem; color: var(--text-muted); margin-top: 2px; letter-spacing: 1.2px; text-transform: uppercase; }
+  .modal-x {
+    background: transparent; border: none; color: var(--text-dim);
+    font-size: 1rem; cursor: pointer; padding: 6px; line-height: 1;
+    transition: color .15s;
+  }
+  .modal-x:hover { color: var(--cream); }
+  .prodkey-msg { font-size: .82rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px; }
+  .dur-row { display: flex; gap: 10px; margin-bottom: 6px; }
+  .dur-num { flex: 1; min-width: 0; }
+  .dur-unit { width: 130px; flex-shrink: 0; }
+  .issue-type-row { display: flex; gap: 10px; align-items: center; margin-bottom: 12px; }
+  .issue-type-row label { font-size: .72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; flex-shrink: 0; }
+  .issue-type-row select { flex: 1; min-width: 0; }
+  .extra-fields { display: flex; gap: 10px; margin-bottom: 8px; }
+  .extra-field { flex: 1; min-width: 0; }
+  .extra-field label { display: block; font-size: .66rem; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: .8px; }
+  .extra-field input { width: 100%; padding: 9px 10px; font-size: .82rem; letter-spacing: 1px; }
+  .key-output {
+    width: 100%; min-height: 72px; resize: vertical; cursor: text;
+    text-align: left; font-size: .74rem; letter-spacing: .6px;
+    line-height: 1.5; white-space: pre; overflow: auto;
+  }
+  .prodkey-input {
+    width: 100%; padding: 12px 14px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.13);
+    border-radius: 10px; color: #f0e6c8;
+    font-size: 1rem; letter-spacing: 2px; text-align: center;
+    font-family: 'DM Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+    outline: none; transition: border-color .18s;
+  }
+  .prodkey-input::placeholder { color: rgba(255,255,255,.22); letter-spacing: 1px; font-size: .85rem; }
+  .prodkey-input:focus { border-color: rgba(255,255,255,.48); }
+  .prodkey-input.err { border-color: rgba(192,80,80,.7); animation: prodkeyShake .3s ease; }
+  .prodkey-input.ok { border-color: rgba(80,192,120,.7); }
+  @keyframes prodkeyShake {
+    0%,100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+  }
+  .dur-hint { font-size: .74rem; color: var(--text-dim); min-height: 18px; margin-bottom: 4px; text-align: center; transition: color .2s; }
+  .dur-hint.live { color: var(--gold); }
+  .prodkey-actions { display: flex; gap: 10px; margin-top: 12px; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 11px 14px; border-radius: var(--radius);
+    border: none; font-size: .88rem; cursor: pointer; gap: 5px;
+    font-family: inherit; font-weight: 700;
+    transition: background .15s, border-color .15s, color .15s;
+    white-space: nowrap;
+  }
+  .btn-gold { background: var(--gold); color: #1a1400; flex: 1; }
+  .btn-gold:hover { background: var(--gold-light); }
+  .btn-gold:disabled { opacity: .45; cursor: not-allowed; pointer-events: none; }
+  .btn-outline { background: transparent; border: 1px solid var(--border2); color: var(--text); }
+  .btn-outline:hover { border-color: var(--gold-dim); color: var(--cream); }
+  .btn-outline:disabled { opacity: .45; cursor: not-allowed; pointer-events: none; }
+  .key-box { margin-top: 12px; }
+  .key-output { cursor: text; }
+  .prodkey-errmsg {
+    font-size: .74rem; color: var(--loss); min-height: 18px;
+    opacity: 0; transition: opacity .2s; text-align: center;
+  }
+  .prodkey-errmsg.show { opacity: 1; }
+  .prodkey-errmsg.ok { color: var(--win); }
+  .wlc-btn-skip {
+    padding: 8px 12px; border-radius: 7px; background: transparent;
+    color: var(--text-dim); font-size: .76rem; border: none; cursor: pointer;
+    font-family: inherit; text-decoration: underline; text-underline-offset: 3px;
+    display: block; margin: 4px auto 0;
+  }
+  .wlc-btn-skip:hover { color: var(--text-muted); }
+
+  /* ── Footer (service status + settings) ── */
+  .keygen-foot {
+    position: relative; z-index: 1; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; padding: 8px 24px 14px; min-height: 36px;
+  }
+  .keygen-foot .bad { color: var(--loss); font-size: .7rem; }
+  .service-dot {
+    width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    background: var(--text-dim);
+  }
+  .service-dot.ok { background: var(--win); box-shadow: 0 0 8px rgba(90,170,122,.65); }
+  .service-dot.bad { background: var(--loss); box-shadow: 0 0 8px rgba(192,96,96,.65); }
+  .service-dot.off { background: #8a6a2a; }
+  .service-text {
+    flex: 1; min-width: 0; font-size: .7rem; color: var(--text-muted);
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .service-settings-btn {
+    flex-shrink: 0; background: transparent; border: 1px solid var(--border2);
+    color: var(--text-muted); border-radius: 6px; padding: 5px 10px;
+    font-size: .68rem; cursor: pointer; font-family: inherit;
+    transition: color .15s, border-color .15s;
+  }
+  .service-settings-btn:hover { color: var(--cream); border-color: var(--gold-dim); }
+  .prodkey-msg code {
+    color: var(--gold-dim); font-family: 'DM Mono', ui-monospace, monospace;
+    font-size: .95em;
+  }
+  .extra-field .wlc-field { color: #f0e6c8; cursor: text; background-image: none; padding-right: 14px; }
+</style>
+</head>
+<body>
+
+<div class="wlc-orb-bg"></div>
+
+<header class="wlc-logo-fixed">
+  <div class="wlc-logo">
+    <span class="wlc-logo-icon" id="logoBtn" title="Choose the database folder that contains index.json and the school logos">♟</span>
+    <div class="wlc-logo-text">Chess Coach Utility</div>
+    <div class="wlc-logo-sub">Activation Key Generator</div>
+  </div>
+</header>
+
+<main class="welcome-wrap">
+  <section class="wlc-step">
+    <div class="wlc-mode-toggle" id="modeToggle">
+      <button type="button" class="mode-btn active" data-mode="school">Schools</button>
+      <button type="button" class="mode-btn" data-mode="coach">Coaching</button>
+    </div>
+
+    <div id="schoolMode">
+      <div class="wlc-school-controls">
+        <div class="wlc-step-title">Select a school</div>
+        <div class="wlc-step-sub">Generate single-use activation keys for a school. The school enters each key once, then the app works offline.</div>
+        <div class="wlc-school-search-wrap">
+          <div class="wlc-school-search-field">
+            <span class="wlc-school-search-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+            </span>
+            <input type="text" class="wlc-school-search" id="wlcSchoolSearch" placeholder="Search for your school…" autocomplete="off" spellcheck="false">
+          </div>
+          <div class="wlc-school-filter-select">
+            <select class="wlc-field" id="wlcDistrictFilter">
+              <option value="">All Districts</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="wlc-school-grid" id="wlcSchoolGrid"></div>
+      <div class="wlc-school-badge-wrap">
+        <div id="wlcSchoolSelectedBadge" class="wlc-school-selected-badge"></div>
+      </div>
+    </div>
+
+    <div id="coachMode" style="display:none">
+      <div class="coach-mode">
+        <div class="wlc-step-title">Coaching business</div>
+        <div class="wlc-step-sub">Activation keys for an individual coach — no school registry needed.</div>
+        <input type="text" class="wlc-school-search coach-field" id="coachNameInput" placeholder="e.g. Kingsway Chess Academy" autocomplete="off" spellcheck="false">
+        <div class="coach-hint">Type the coaching business name <em>exactly</em> as the coach enters it in the app — the activation code is bound to this name.</div>
+        <button class="btn btn-gold coach-issue" id="coachIssueBtn" disabled>Create Activation Codes</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="keygen-foot" id="keygenFoot">
+  <span class="service-dot" id="serviceDot"></span>
+  <span class="service-text" id="serviceText">Checking the activation service…</span>
+  <button class="service-settings-btn" id="serviceSettingsBtn" type="button">Service settings</button>
+</footer>
+
+<!-- Issue activation codes -->
+<div class="prodkey-overlay" id="durationModal">
+  <div class="prodkey-dialog">
+    <div class="prodkey-header">
+      <span class="modal-logo" id="modalLogo"></span>
+      <div class="prodkey-titles">
+        <div class="prodkey-title" id="modalTitle">Issue activation codes</div>
+        <div class="prodkey-subtitle" id="modalSubtitle">One-time activation</div>
+      </div>
+      <button class="modal-x" id="modalX" title="Close">✕</button>
+    </div>
+    <p class="prodkey-msg" id="issueMsg">Choose how long the licence should last, then generate one code per device. Register the codes with the activation service before handing them out.</p>
+    <div class="dur-row">
+      <input type="number" class="prodkey-input dur-num" id="durNum" value="30" min="1" max="3650" autocomplete="off">
+      <select class="wlc-field dur-unit" id="durUnit">
+        <option>Minutes</option>
+        <option>Hours</option>
+        <option>Days</option>
+        <option>Months</option>
+        <option>Years</option>
+      </select>
+    </div>
+    <div class="extra-fields">
+      <div class="extra-field"><label for="codeCount">Codes / devices</label><input type="number" class="prodkey-input" id="codeCount" value="1" min="1" max="500"></div>
+      <div class="extra-field"><label for="codeSeats">Seats per code</label><input type="number" class="prodkey-input" id="codeSeats" value="1" min="1" max="50"></div>
+    </div>
+    <div class="extra-field" style="margin-bottom:8px">
+      <label for="orderRef">Order reference (optional)</label>
+      <input type="text" class="prodkey-input" id="orderRef" placeholder="invoice or customer reference" autocomplete="off" spellcheck="false">
+    </div>
+    <div class="dur-hint" id="durHint">30 days · expires after generation</div>
+    <div class="prodkey-actions">
+      <button class="btn btn-gold" id="genBtn">Generate codes</button>
+      <button class="btn btn-outline" id="copyBtn" disabled>Copy</button>
+    </div>
+    <div class="key-box" id="keyBox" style="display:none">
+      <textarea class="prodkey-input key-output" id="keyOutput" readonly placeholder="—"></textarea>
+    </div>
+    <div class="prodkey-actions" id="outputActions" style="display:none">
+      <button class="btn btn-outline" id="saveFileBtn">Save batch</button>
+      <button class="btn btn-outline" id="publishBtn">Register with service</button>
+    </div>
+    <div class="prodkey-errmsg" id="statusMsg"></div>
+  </div>
+</div>
+
+<!-- Activation service settings -->
+<div class="prodkey-overlay" id="serviceModal">
+  <div class="prodkey-dialog">
+    <div class="prodkey-header">
+      <span class="modal-logo" style="color:var(--gold)">⚙</span>
+      <div class="prodkey-titles">
+        <div class="prodkey-title">Activation service</div>
+        <div class="prodkey-subtitle">Registration · diagnostics</div>
+      </div>
+      <button class="modal-x" id="serviceX" title="Close">✕</button>
+    </div>
+    <p class="prodkey-msg">Codes must be registered before the app can activate them. The admin token is stored in <code>~/.config/ccu-keygen/admin-token</code> with owner-only permissions.</p>
+    <div class="extra-field" style="margin-bottom:10px">
+      <label for="serviceUrl">Service URL</label>
+      <input type="text" class="wlc-field" id="serviceUrl" placeholder="https://ccu-activation.ccu.deno.net" autocomplete="off" spellcheck="false">
+    </div>
+    <div class="extra-field" style="margin-bottom:8px">
+      <label for="serviceToken">Admin token</label>
+      <input type="password" class="wlc-field" id="serviceToken" placeholder="(leave blank to keep the saved token)" autocomplete="off">
+    </div>
+    <button class="wlc-btn-skip" id="clearTokenBtn" type="button" style="margin:0 0 8px">Forget saved token</button>
+    <div class="dur-hint" id="serviceHint" style="text-align:left"></div>
+    <div class="prodkey-actions">
+      <button class="btn btn-gold" id="serviceSave">Save &amp; test</button>
+      <button class="btn btn-outline" id="serviceTest">Test</button>
+    </div>
+    <div class="prodkey-errmsg" id="serviceMsg"></div>
+  </div>
+</div>
+
+<script>
+'use strict';
+
+// ── IPC bridge ────────────────────────────────────────────────────────
+let _seq = 0;
+const _pending = new Map();
+
+function ccuCall(cmd, args, cb) {
+  const id = ++_seq;
+  if (cb) _pending.set(id, cb);
+  window.ipc.postMessage(JSON.stringify({ id, cmd, args: args || {} }));
+}
+
+window.__ccuResp = function (msg) {
+  const cb = _pending.get(msg.id);
+  if (cb) { _pending.delete(msg.id); cb(msg.resp); }
+};
+
+// ── State ─────────────────────────────────────────────────────────────
+let _schools = [];
+let _logos = {};
+let _selected = null;
+let _generated = '';
+let _batch = null;
+let _mode = 'school';
+let _bootError = '';
+let _clearTokenArmed = false;
+let _service = { online: null, tokenConfigured: false, keyring: false, keyMatch: null, url: '', kid: '' };
+
+const $ = id => document.getElementById(id);
+
+const UNITS = { Minutes: 1, Hours: 60, Days: 1440, Months: 43200, Years: 525600 };
+function unitMinutes() { return UNITS[$('durUnit').value] || 1; }
+
+// ── Logos are fetched lazily, one IPC round-trip per school, and cached.
+function loadLogo(school, el) {
+  if (_logos[school.name]) { applyLogo(el, _logos[school.name], school); return; }
+  ccuCall('logo', { school: school.name }, resp => {
+    if (!resp || !resp.ok || !resp.url) return;
+    _logos[school.name] = resp.url;
+    applyLogo(el, resp.url, school);
+  });
+}
+
+function applyLogo(el, url, school) {
+  if (!el || el.dataset.loaded) return;
+  el.dataset.loaded = '1';
+  const img = document.createElement('img');
+  img.src = url;
+  img.alt = school.name;
+  img.width = 52; img.height = 52;
+  img.onload = () => img.classList.add('loaded');
+  img.onerror = () => { img.style.display = 'none'; };
+  el.textContent = '';
+  el.style.background = '';
+  el.style.color = '';
+  el.appendChild(img);
+}
+
+// ── School grid (mirrors the app's welcome selector) ──────────────────
+function schoolCardHTML(school) {
+  const card = document.createElement('div');
+  card.className = 'wlc-school-card' + (_selected && _selected.name === school.name ? ' sel' : '');
+  card.dataset.name = school.name;
+  card.dataset.district = school.district;
+
+  const logo = document.createElement('div');
+  logo.className = 'school-logo';
+  const src = _logos[school.name];
+  if (src) {
+    applyLogo(logo, src, school);
+  } else {
+    const ph = document.createElement('div');
+    ph.className = 'placeholder';
+    ph.style.background = school.palette || 'rgba(255,255,255,.06)';
+    ph.style.color = school.palette ? 'rgba(16,9,11,.85)' : 'rgba(240,230,200,.45)';
+    ph.textContent = school.name.charAt(0).toUpperCase();
+    logo.appendChild(ph);
+    loadLogo(school, logo);
+  }
+  card.appendChild(logo);
+
+  const name = document.createElement('div');
+  name.className = 'school-name';
+  name.textContent = school.name;
+  card.appendChild(name);
+
+  const dist = document.createElement('div');
+  dist.className = 'school-district';
+  dist.textContent = school.district;
+  card.appendChild(dist);
+
+  card.addEventListener('click', () => pickSchool(school));
+  return card;
+}
+
+function pickSchool(school) {
+  _selected = school;
+  document.querySelectorAll('.wlc-school-card').forEach(c => {
+    c.classList.toggle('sel', c.dataset.name === school.name);
+  });
+  updateSchoolBadge();
+  openModal(school);
+}
+
+function updateSchoolBadge() {
+  const badge = $('wlcSchoolSelectedBadge');
+  if (!badge) return;
+  if (!_selected) { badge.innerHTML = ''; return; }
+  const src = _logos[_selected.name];
+  badge.innerHTML =
+    '<span class="badge-logo">' + (src ? '<img src="' + src + '" alt="" onerror="this.style.display=\'none\'">' : '') + '</span>' +
+    _selected.name +
+    '<button class="badge-cross" id="badgeCross" title="Deselect">✕</button>';
+  badge.querySelector('#badgeCross').addEventListener('click', e => {
+    e.stopPropagation();
+    deselectSchool();
+  });
+}
+
+function deselectSchool() {
+  _selected = null;
+  closeModal();
+  document.querySelectorAll('.wlc-school-card.sel').forEach(c => c.classList.remove('sel'));
+  updateSchoolBadge();
+}
+
+// ── School / Coaching mode ────────────────────────────────────────────
+function setMode(m) {
+  if (m === _mode) return;
+  _mode = m;
+  document.querySelectorAll('#modeToggle .mode-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.mode === m);
+  });
+  $('schoolMode').style.display = m === 'school' ? '' : 'none';
+  $('coachMode').style.display = m === 'coach' ? '' : 'none';
+  deselectSchool();
+}
+
+// Coaching businesses have no registry entry; the name itself binds the
+// activation code, exactly like `ccu-keygen gen-codes --coach`.
+function openCoachModal(name) {
+  _selected = { name, coach: true, district: 'Private Coaching' };
+  openModal(_selected);
+}
+
+let _filterTimer = null;
+function filterSchools() {
+  $('wlcSchoolGrid').classList.add('filtering');
+  clearTimeout(_filterTimer);
+  _filterTimer = setTimeout(renderSchoolGrid, 120);
+}
+
+function renderSchoolGrid() {
+  const grid = $('wlcSchoolGrid');
+  const search = $('wlcSchoolSearch').value.toLowerCase().trim();
+  const district = $('wlcDistrictFilter').value;
+
+  grid.classList.add('filtering');
+  let filtered = _schools;
+  if (search) filtered = filtered.filter(s => s.name.toLowerCase().includes(search));
+  if (district) filtered = filtered.filter(s => s.district === district);
+
+  // Up to 14 schools → 7-per-row grid; more → the two-row carousel.
+  grid.classList.toggle('carousel', filtered.length > 14);
+  grid.innerHTML = '';
+  if (!filtered.length) {
+    const empty = document.createElement('div');
+    empty.className = 'wlc-school-empty';
+    empty.innerHTML = '<span class="empty-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg></span><div class="empty-text">No schools match your criteria</div>';
+    grid.appendChild(empty);
+    grid.classList.remove('filtering');
+    return;
+  }
+
+  const frag = document.createDocumentFragment();
+  for (const s of filtered) frag.appendChild(schoolCardHTML(s));
+  grid.appendChild(frag);
+  grid.classList.remove('filtering');
+  fitSchoolNames();
+}
+
+function fitSchoolNames() {
+  const MIN_FONT_PX = 8;
+  document.querySelectorAll('.wlc-school-card .school-name').forEach(el => {
+    el.style.fontSize = '';
+    while (el.scrollHeight > el.clientHeight + 1) {
+      const cur = parseFloat(getComputedStyle(el).fontSize);
+      if (cur <= MIN_FONT_PX) break;
+      el.style.fontSize = (cur - 0.5).toFixed(1) + 'px';
+    }
+  });
+}
+
+function populateDistricts() {
+  const districts = [...new Set(_schools.map(s => s.district))].sort();
+  const sel = $('wlcDistrictFilter');
+  const cur = sel.value;
+  sel.innerHTML = '<option value="">All Districts</option>' +
+    districts.map(d => `<option value="${d.replace(/"/g, '&quot;')}">${d}</option>`).join('');
+  sel.value = cur || (districts.includes('UGU') ? 'UGU' : '');
+}
+
+// ── Issue modal ───────────────────────────────────────────────────────
+function issueKind() {
+  return _selected && _selected.coach ? 'coach' : 'school';
+}
+
+function safeFileBase() {
+  return (_selected && _selected.name ? _selected.name : 'activation-codes')
+    .replace(/[^A-Za-z0-9._-]+/g, '-')
+    .replace(/^-+|-+$/g, '') || 'activation-codes';
+}
+
+function durationHint() {
+  const v = Math.max(1, Number($('durNum').value) || 0);
+  const mins = unitMinutes() * v;
+  let equiv;
+  if (mins >= 525600) equiv = `${mins / 525600} year${mins / 525600 === 1 ? '' : 's'}`;
+  else if (mins >= 43200) equiv = `${mins / 43200} month${mins / 43200 === 1 ? '' : 's'}`;
+  else if (mins >= 1440) equiv = `${mins / 1440} day${mins / 1440 === 1 ? '' : 's'}`;
+  else if (mins >= 60) equiv = `${mins / 60} hour${mins / 60 === 1 ? '' : 's'}`;
+  else equiv = `${mins} minute${mins === 1 ? '' : 's'}`;
+  return `${v} ${$('durUnit').value.toLowerCase()} · expires ${equiv} after generation`;
+}
+
+function setStatus(ok, text) {
+  const el = $('statusMsg');
+  el.textContent = text;
+  el.className = 'prodkey-errmsg' + (text ? ' show' : '') + (ok ? ' ok' : '');
+}
+
+function copyText(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(ok => ok ? true : fallbackCopy(text)).catch(() => fallbackCopy(text));
+    return;
+  }
+  fallbackCopy(text);
+}
+function fallbackCopy(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); } catch (_) {}
+  document.body.removeChild(ta);
+}
+
+function clearOutput() {
+  _generated = '';
+  _batch = null;
+  $('keyBox').style.display = 'none';
+  $('outputActions').style.display = 'none';
+  $('copyBtn').disabled = true;
+  $('keyOutput').value = '';
+  $('keyOutput').classList.remove('ok');
+  setStatus(false, '');
+  $('publishBtn').textContent = 'Register with service';
+  $('publishBtn').disabled = false;
+}
+
+function openModal(school) {
+  _selected = school;
+  const isCoach = !!school.coach;
+
+  const logo = $('modalLogo');
+  logo.dataset.loaded = '';
+  logo.style.background = '';
+  logo.style.color = '';
+  logo.innerHTML = '';
+  if (isCoach) {
+    logo.textContent = '♛';
+    logo.style.background = 'rgba(255,255,255,.05)';
+    logo.style.color = 'var(--gold)';
+  } else {
+    const src = _logos[school.name];
+    if (src) {
+      applyLogo(logo, src, school);
+    } else {
+      logo.style.background = school.palette || 'rgba(255,255,255,.06)';
+      logo.style.color = school.palette ? 'rgba(16,9,11,.85)' : 'rgba(240,230,200,.45)';
+      logo.textContent = school.name.charAt(0).toUpperCase();
+      loadLogo(school, logo);
+    }
+  }
+
+  $('modalTitle').textContent = school.name;
+  $('modalSubtitle').textContent = 'Activation codes · ' + (isCoach ? 'Private Coaching' : school.district);
+  $('issueMsg').textContent = isCoach
+    ? 'Each code activates one device for this coaching business. The coach enters it once, then the app works offline until the licence expires. Register the codes with the service before handing them out.'
+    : 'Each code activates one device for this school. The school enters it once, then the app works offline until the licence expires. Register the codes with the service before handing them out.';
+
+  $('durNum').value = '30';
+  $('durUnit').value = 'Days';
+  $('codeCount').value = '1';
+  $('codeSeats').value = '1';
+  $('orderRef').value = '';
+  $('genBtn').disabled = false;
+  $('durHint').textContent = durationHint();
+  $('durHint').className = 'dur-hint';
+  clearOutput();
+  $('durationModal').classList.add('open');
+}
+
+function closeModal() {
+  $('durationModal').classList.remove('open');
+}
+
+// ── Service status / settings ────────────────────────────────────────
+function applyServiceStatus(st) {
+  if (!st) return;
+  _service = Object.assign({}, _service, st);
+  const dot = $('serviceDot');
+  const text = $('serviceText');
+  let cls = 'off';
+  let msg;
+
+  if (!st.online) {
+    msg = `Activation service unreachable · ${st.url || ''}`;
+  } else if (!st.keyring) {
+    cls = 'bad';
+    msg = 'No signing key on this machine — run ccu-keygen init';
+  } else if (!st.keyMatch) {
+    cls = 'bad';
+    msg = 'Key mismatch — this keyring does not match the service';
+  } else {
+    cls = 'ok';
+    msg = `Activation service online · ${st.kid || 'activation-2026'} · ${st.codes ?? 0} codes`;
+  }
+  if (st.online && !st.tokenConfigured) msg += ' · admin token not set';
+  if (_bootError) msg += ' · database: ' + _bootError;
+
+  dot.className = 'service-dot ' + cls;
+  text.textContent = msg;
+  text.title = st.error || st.url || '';
+
+  $('serviceToken').placeholder = st.tokenConfigured
+    ? '•••••••• saved — leave blank to keep'
+    : 'paste the admin token';
+  if ($('serviceModal').classList.contains('open')) {
+    $('serviceHint').textContent = st.online
+      ? `${st.url} · ${st.codes ?? 0} codes, ${st.activations ?? 0} activations · public key ${st.publicKey || '?'}`
+      : (st.error || 'Not connected');
+  }
+}
+
+function refreshService(showInModal) {
+  $('serviceText').textContent = 'Checking the activation service…';
+  $('serviceDot').className = 'service-dot';
+  ccuCall('service_status', {}, resp => {
+    if (!resp || !resp.ok) {
+      $('serviceDot').className = 'service-dot bad';
+      $('serviceText').textContent = (resp && resp.error) || 'Could not check the activation service';
+      return;
+    }
+    applyServiceStatus(resp.status);
+    if (showInModal && $('serviceModal').classList.contains('open')) {
+      const st = resp.status;
+      const el = $('serviceMsg');
+      if (!st.online) {
+        el.textContent = st.error || 'Could not reach the service.';
+        el.className = 'prodkey-errmsg show';
+      } else if (!st.keyMatch) {
+        el.textContent = 'Connected, but the service key does NOT match this keyring — licences would be rejected in the app.';
+        el.className = 'prodkey-errmsg show';
+      } else {
+        el.textContent = 'Connected. The service key matches this keyring.';
+        el.className = 'prodkey-errmsg show ok';
+      }
+    }
+  });
+}
+
+function openServiceModal() {
+  $('serviceUrl').value = _service.url || '';
+  $('serviceToken').value = '';
+  $('serviceMsg').textContent = '';
+  $('serviceMsg').className = 'prodkey-errmsg';
+  _clearTokenArmed = false;
+  $('clearTokenBtn').textContent = 'Forget saved token';
+  $('serviceHint').textContent = _service.online
+    ? `${_service.url} · ${_service.codes ?? 0} codes`
+    : (_service.error || 'Not connected');
+  $('serviceModal').classList.add('open');
+}
+
+function closeServiceModal() {
+  $('serviceModal').classList.remove('open');
+}
+
+function saveService(clearToken) {
+  const server = $('serviceUrl').value.trim();
+  const token = clearToken ? '' : $('serviceToken').value.trim();
+  $('serviceSave').disabled = true;
+  $('serviceTest').disabled = true;
+  $('serviceMsg').textContent = 'Saving…';
+  $('serviceMsg').className = 'prodkey-errmsg show';
+  ccuCall('save_settings', {
+    server,
+    adminToken: token,
+    clearToken: !!clearToken
+  }, resp => {
+    $('serviceSave').disabled = false;
+    $('serviceTest').disabled = false;
+    if (!resp || !resp.ok) {
+      $('serviceMsg').textContent = (resp && resp.error) || 'Could not save the settings';
+      $('serviceMsg').className = 'prodkey-errmsg show';
+      return;
+    }
+    $('serviceToken').value = '';
+    applyServiceStatus(resp.status);
+    const st = resp.status;
+    const el = $('serviceMsg');
+    if (!st.online) {
+      el.textContent = 'Saved, but the service is unreachable: ' + (st.error || '');
+      el.className = 'prodkey-errmsg show';
+    } else if (!st.keyMatch) {
+      el.textContent = 'Saved. The service is online, but its key does NOT match this keyring.';
+      el.className = 'prodkey-errmsg show';
+    } else {
+      el.textContent = clearToken ? 'Saved. The admin token was removed.' : 'Saved. The service key matches this keyring.';
+      el.className = 'prodkey-errmsg show ok';
+    }
+  });
+}
+
+// ── Wiring ────────────────────────────────────────────────────────────
+$('wlcSchoolSearch').addEventListener('input', filterSchools);
+$('wlcDistrictFilter').addEventListener('change', filterSchools);
+
+document.querySelectorAll('#modeToggle .mode-btn').forEach(btn => {
+  btn.addEventListener('click', () => setMode(btn.dataset.mode));
+});
+
+$('coachNameInput').addEventListener('input', e => {
+  $('coachIssueBtn').disabled = !e.target.value.trim();
+});
+$('coachNameInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter' && !$('coachIssueBtn').disabled) $('coachIssueBtn').click();
+});
+$('coachIssueBtn').addEventListener('click', () => {
+  const name = $('coachNameInput').value.trim();
+  if (!name) return;
+  openCoachModal(name);
+});
+
+// The chess piece in the header opens the database folder picker.
+$('logoBtn').addEventListener('click', () => {
+  ccuCall('pickdir', {}, resp => {
+    if (!resp || !resp.ok || resp.cancelled || !resp.data) return;
+    _schools = resp.data.schools || [];
+    _logos = {};
+    $('wlcSchoolSearch').value = '';
+    deselectSchool();
+    populateDistricts();
+    renderSchoolGrid();
+  });
+});
+
+$('wlcSchoolSelectedBadge').addEventListener('click', () => {
+  if (_selected) openModal(_selected);
+});
+
+$('modalX').addEventListener('click', closeModal);
+$('durationModal').addEventListener('click', e => { if (e.target === $('durationModal')) closeModal(); });
+$('serviceX').addEventListener('click', closeServiceModal);
+$('serviceModal').addEventListener('click', e => { if (e.target === $('serviceModal')) closeServiceModal(); });
+$('serviceSettingsBtn').addEventListener('click', openServiceModal);
+$('serviceSave').addEventListener('click', () => saveService(false));
+$('serviceTest').addEventListener('click', () => refreshService(true));
+$('clearTokenBtn').addEventListener('click', () => {
+  if (!_clearTokenArmed) {
+    _clearTokenArmed = true;
+    $('clearTokenBtn').textContent = 'Click again to confirm';
+    return;
+  }
+  _clearTokenArmed = false;
+  $('clearTokenBtn').textContent = 'Forget saved token';
+  saveService(true);
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  if ($('serviceModal').classList.contains('open')) closeServiceModal();
+  else if ($('durationModal').classList.contains('open')) closeModal();
+});
+
+['durNum', 'durUnit', 'codeCount', 'codeSeats', 'orderRef'].forEach(id => {
+  $(id).addEventListener('input', () => {
+    $('durHint').textContent = durationHint();
+    $('durHint').className = 'dur-hint';
+    clearOutput();
+  });
+  $(id).addEventListener('change', () => {
+    $('durHint').textContent = durationHint();
+    $('durHint').className = 'dur-hint';
+    clearOutput();
+  });
+});
+
+$('genBtn').addEventListener('click', () => {
+  if (!_selected) return;
+  const v = Math.max(1, Number($('durNum').value) || 0);
+  const minutes = Math.round(unitMinutes() * v);
+  const count = Math.max(1, Math.min(500, Number($('codeCount').value) || 1));
+  const seats = Math.max(1, Math.min(50, Number($('codeSeats').value) || 1));
+  const order = $('orderRef').value.trim();
+
+  $('genBtn').disabled = true;
+  setStatus(false, 'Generating…');
+  ccuCall('generate_codes', {
+    school: _selected.name,
+    kind: issueKind(),
+    minutes,
+    count,
+    seats,
+    order
+  }, resp => {
+    $('genBtn').disabled = false;
+    if (!resp || !resp.ok) {
+      setStatus(false, (resp && resp.error) || 'Generation failed');
+      return;
+    }
+    _batch = resp.batch || null;
+    _generated = (resp.codes || []).join('\n');
+    $('keyOutput').value = _generated;
+    $('keyBox').style.display = '';
+    $('outputActions').style.display = '';
+    $('copyBtn').disabled = false;
+    $('publishBtn').disabled = false;
+    $('publishBtn').textContent = 'Register with service';
+    $('durHint').textContent = `expires ${resp.iso} (${resp.remaining})`;
+    $('durHint').className = 'dur-hint live';
+    $('keyOutput').classList.add('ok');
+    const need = _service.tokenConfigured
+      ? 'register them with the service before handing them out'
+      : 'set the admin token in Service settings, then register them';
+    setStatus(true, `${resp.codes.length} code(s) ready — ${need}`);
+  });
+});
+
+$('publishBtn').addEventListener('click', () => {
+  if (!_batch) return;
+  $('publishBtn').disabled = true;
+  setStatus(false, 'Registering with the activation service…');
+  ccuCall('publish_codes', { batch: _batch }, resp => {
+    if (!resp || !resp.ok) {
+      $('publishBtn').disabled = false;
+      setStatus(false, (resp && resp.error) || 'Registration failed');
+      return;
+    }
+    const r = resp.result || {};
+    $('publishBtn').textContent = 'Registered ✓';
+    setStatus(true, `Registered — imported ${r.imported ?? 0}, skipped ${r.skipped ?? 0}, ${r.totalCodes ?? 0} code(s) on the service.`);
+    refreshService(false);
+  });
+});
+
+$('copyBtn').addEventListener('click', () => {
+  if (!_generated) return;
+  copyText(_generated);
+  setStatus(true, 'Codes copied to the clipboard');
+});
+
+$('saveFileBtn').addEventListener('click', () => {
+  if (!_batch) return;
+  ccuCall('save_file', {
+    title: 'Save activation code batch',
+    filename: safeFileBase() + '-activation-codes.json',
+    content: JSON.stringify(_batch, null, 2) + '\n'
+  }, resp => {
+    if (!resp || !resp.ok) {
+      if (resp && !resp.cancelled) setStatus(false, resp.error || 'Could not save the batch');
+      return;
+    }
+    setStatus(true, 'Saved ' + resp.path);
+  });
+});
+
+// ── Boot ──────────────────────────────────────────────────────────────
+ccuCall('init', {}, resp => {
+  if (!resp || !resp.ok) {
+    $('serviceDot').className = 'service-dot bad';
+    $('serviceText').textContent = (resp && resp.error) || 'Initialisation failed';
+    return;
+  }
+  const d = resp.data;
+  _schools = d.schools || [];
+  _bootError = d.error || '';
+  if (d.service) {
+    _service.url = d.service.url || '';
+    _service.tokenConfigured = !!d.service.tokenConfigured;
+    _service.keyring = !!d.service.keyring;
+    _service.kid = d.service.kid || '';
+  }
+
+  populateDistricts();
+  renderSchoolGrid();
+  fitSchoolNames();
+  document.fonts.ready.then(fitSchoolNames);
+  let fitTimer = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(fitTimer);
+    fitTimer = setTimeout(fitSchoolNames, 150);
+  });
+
+  refreshService(false);
+});
+</script>
+</body>
+</html>

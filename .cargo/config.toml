@@ -1,0 +1,15 @@
+[target.x86_64-pc-windows-msvc]
+linker = "lld-link"
+rustflags = [
+  "-L", "native=/tmp/.xwin-cache/splat/crt/lib/x86_64",
+  "-L", "native=/tmp/.xwin-cache/splat/sdk/lib/ucrt/x86_64",
+  "-L", "native=/tmp/.xwin-cache/splat/sdk/lib/um/x86_64",
+]
+
+[target.x86_64-pc-windows-msvc.env]
+# Include paths for Windows SDK + CRT headers
+"INCLUDE" = "/tmp/.xwin-cache/splat/crt/include /tmp/.xwin-cache/splat/sdk/include/ucrt /tmp/.xwin-cache/splat/sdk/include/um /tmp/.xwin-cache/splat/sdk/include/shared /tmp/.xwin-cache/splat/sdk/include/ucrt/x86_64"
+# Library paths for MSVC + Windows SDK libs
+"LIB" = "/tmp/.xwin-cache/splat/crt/lib/x86_64 /tmp/.xwin-cache/splat/sdk/lib/ucrt/x86_64 /tmp/.xwin-cache/splat/sdk/lib/um/x86_64"
+# Path to the MSVC linker
+"CC_x86_64-pc-windows-msvc" = "/home/abscissa/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/bin/gcc-ld/lld-link"
