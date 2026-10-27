@@ -20,14 +20,13 @@ The application is built on a Rust backend with a JavaScript frontend.
 │   ├── tauri.conf.json      Tauri configuration
 │   ├── capabilities/        Capability definitions
 │   ├── permissions/         Permission schemas
-│   ├── gen/schemas/         Generated JSON schemas
 │   ├── icons/               Application icons
 │   └── src/                 Rust source (backend glue)
 ├── patches/                 Cargo patches for dependencies
 │   └── tauri-plugin-google-auth/
 │       Local patched copy of tauri-plugin-google-auth
 ├── tools/                   Developer tools and utilities
-│   ├── keygen/              Activation key generator (Linux)
+│   ├── rust_utils/          Rust build/verification utilities
 │   ├── scripts/             Python utility scripts
 │   └── cpp_utils/           C++ utility library
 ├── docs/                    Documentation
@@ -38,11 +37,11 @@ The application is built on a Rust backend with a JavaScript frontend.
 └── rules.md                 Coding guidelines
 ```
 
-> **Note:** The proprietary chess engine, AI modules, licensing logic,
-> and frontend UI code are maintained in a separate private repository.
-> This public repository contains only the build infrastructure,
-> configuration, and developer tooling. A functional application
-> cannot be built from this repository alone.
+> **Note:** The proprietary chess engine, AI modules, frontend UI code,
+> and licensing logic are not included in this repository. This public
+> repository contains only the build infrastructure, configuration, and
+> developer tooling. A functional application cannot be built from this
+> repository alone.
 
 ## Development
 
@@ -67,20 +66,20 @@ For Windows cross-compilation (requires cargo-xwin):
 bash setup-ccu.sh --win
 ```
 
-For building the activation key generator tool:
+For Linux release bundles:
 
 ```bash
-bash setup-ccu.sh --keygen
+bash setup-ccu.sh --linux
 ```
 
 ### Building
 
 ```bash
 # Build the Tauri backend
-cd src-tauri && cargo build
+cd src-tauri && cargo check
 
-# Build the keygen tool
-cd tools/keygen && make
+# Build the Rust utilities
+cd tools/rust_utils && cargo build
 
 # Build the C++ utilities
 cd tools/cpp_utils && cmake . && make
@@ -97,40 +96,35 @@ python tools/scripts/test_runner.py
 
 # Run only Rust tests
 cd src-tauri && cargo test
-cd tools/keygen && cargo test
+cd tools/rust_utils && cargo test
 
 # Run specific test suites
-python tools/scripts/test_runner.py --filter keygen licensing
+python tools/scripts/test_runner.py --filter rust
 ```
 
 ## Tools
 
-### keygen
+### Rust Utilities (`tools/rust_utils/`)
 
-The CCU Activation Key Generator is a Linux-only tool for issuing
-activation codes. It communicates with the activation service to
-register batches of codes for distribution.
+Build verification and environment checking utilities written in Rust.
 
 ```bash
-cd tools/keygen && make install
-ccu-keygen init
-ccu-keygen status
+cd tools/rust_utils && cargo run -- check
+cd tools/rust_utils && cargo run -- verify --all
 ```
 
-See `tools/keygen/README.md` for full documentation.
-
-### Utility Scripts
+### Utility Scripts (`tools/scripts/`)
 
 | Script | Description |
 |--------|-------------|
-| `tools/scripts/build_helper.py` | Version management and environment validation |
-| `tools/scripts/test_runner.py` | Test suite orchestration and reporting |
-| `tools/scripts/tournament_analyzer.py` | PGN tournament data analysis |
-| `tools/scripts/data_migration.py` | Database schema migration tool |
+| `build_helper.py` | Version management and environment validation |
+| `test_runner.py` | Test suite orchestration and reporting |
+| `tournament_analyzer.py` | PGN tournament data analysis |
+| `data_migration.py` | Data schema migration tool |
 
-### C++ Utilities
+### C++ Utilities (`tools/cpp_utils/`)
 
-The `tools/cpp_utils/` module provides:
+The C++ utility library provides:
 
 - **PGN Parser**: Parses and validates PGN chess game notation files
 - **Binary Reader**: Reads/writes the CCUDB binary database format

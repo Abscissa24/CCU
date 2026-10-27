@@ -2,13 +2,12 @@
 # =============================================================================
 #  Chess Coach Utility (CCU) — Arch Linux dev/build environment setup
 #  Run once on a fresh machine. Safe to re-run (idempotent where possible).
-#  Usage:  bash setup-ccu.sh [--win] [--linux] [--keygen]
+#  Usage:  bash setup-ccu.sh [--win] [--linux]
 #
 #  Flags:
 #    --win      additionally build the Windows portable .exe (needs cargo-xwin)
 #    --linux    additionally build the Linux AppImage + deb bundles
-#    --keygen   additionally build tools/keygen (activation key generator GUI)
-#    --all      same as --win --linux --keygen
+#    --all      same as --win --linux
 #
 #  This project lives in the folder this script lives in. Restore the whole
 #  CCU/CCU folder where it lives (~/Documents/CCU/CCU) then run this script.
@@ -26,13 +25,12 @@ fi
 
 PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-DO_WIN=false; DO_LINUX=false; DO_KEYGEN=false
+DO_WIN=false; DO_LINUX=false
 for arg in "$@"; do
   case "$arg" in
     --win)    DO_WIN=true ;;
     --linux)  DO_LINUX=true ;;
-    --keygen) DO_KEYGEN=true ;;
-    --all)    DO_WIN=true; DO_LINUX=true; DO_KEYGEN=true ;;
+    --all)    DO_WIN=true; DO_LINUX=true ;;
     *) die "Unknown argument: $arg" ;;
   esac
 done
@@ -150,16 +148,6 @@ if [ "$DO_WIN" = true ]; then
 fi
 
 # =============================================================================
-# 9. (FLAG) KEYGEN TOOL — releases/keygen/ccu-keygen (Linux-only, WebKitGTK GUI)
-# =============================================================================
-if [ "$DO_KEYGEN" = true ]; then
-  step "Building tools/keygen"
-  ( cd "$PROJECT_DIR/tools/keygen" && make install )
-  ok "keygen built and installed"
-  echo "  see: $PROJECT_DIR/releases/keygen/ccu-keygen"
-fi
-
-# =============================================================================
 # DONE
 # =============================================================================
 echo -e "\n${GREEN}═══════════════════════════════════════════════════${NC}"
@@ -174,8 +162,4 @@ echo "  Build without the GUI (release):"
 echo ""
 echo "    cd $PROJECT_DIR && npm run build:linux   # AppImage + deb"
 echo "    cd $PROJECT_DIR && npm run build:win     # portable Windows .exe"
-echo ""
-echo "  keygen  (activation key generator):"
-echo ""
-echo "    cd $PROJECT_DIR/tools/keygen && make install"
 echo ""

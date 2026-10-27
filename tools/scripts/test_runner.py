@@ -3,8 +3,7 @@
 Test runner for Chess Coach Utility (CCU).
 
 Runs the project's test suites in the correct order and aggregates results.
-Supports both the keygen unit tests (`cargo test`) and the frontend
-integration tests (`npm run test:*`).
+Supports Rust, Python, and C++ test suites alongside frontend integration tests.
 
 This is a developer convenience script — the proprietary test fixtures
 are injected at CI time and are not available in this repository.
@@ -181,25 +180,14 @@ def build_suites(project_root: Path, suite_filter: Optional[list[str]] = None) -
     """Build the list of test suites to run."""
     suites: list[TestSuite] = []
 
-    # Keygen unit tests
-    keygen_dir = project_root / "tools" / "keygen"
-    if keygen_dir.exists():
+    # Rust utility tests
+    rust_utils_dir = project_root / "tools" / "rust_utils"
+    if rust_utils_dir.exists():
         suites.append(TestSuite(
-            name="keygen:unit",
+            name="rust-utils:unit",
             command=["cargo", "test"],
-            cwd=keygen_dir,
+            cwd=rust_utils_dir,
         ))
-
-    # Keygen end-to-end (requires local activation service)
-    if keygen_dir.exists():
-        e2e_script = keygen_dir / "scripts" / "e2e.mjs"
-        if e2e_script.exists():
-            suites.append(TestSuite(
-                name="keygen:e2e",
-                command=["node", str(e2e_script)],
-                cwd=project_root,
-                env={"CCU_E2E_SERVER": "local"},
-            ))
 
     # Licensing tests
     licensing_test = project_root / "tests" / "licensing.test.mjs"

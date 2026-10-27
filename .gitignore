@@ -11,12 +11,12 @@ activation/deno/*.sqlite*
 activation/deno/kv*
 
 # Build artifacts
-tools/keygen/target/
 src-tauri/target/
 node_modules/
 dist/
 tools/cpp_utils/build/
 tools/cpp_utils/cmake-build-*/
+tools/rust_utils/target/
 target/
 
 # Cargo
