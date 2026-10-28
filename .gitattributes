@@ -8,3 +8,6 @@ rules.md docs
 # Generated schemas and configs
 gen/schemas/ generated
 *.gen.ts generated
+
+# Vendored dependencies (third-party code)
+patches/ linguist-vendored
