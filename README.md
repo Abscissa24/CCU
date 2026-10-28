@@ -1,15 +1,37 @@
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/Abscissa24/CCU/main/src-tauri/icons/icon.png" alt="CCU logo" width="160" />
+
 # Chess Coach Utility (CCU)
 
-A cross-platform desktop application for chess coaching, tournament
-management, and player development.
+**Chess coaching. Tournament management. Player development.**
 
-## Overview
+Cross-platform desktop tooling for chess coaches, tournament directors, and player development — built on a Rust backend with a JavaScript frontend.
 
-Chess Coach Utility (CCU) is a Tauri-based desktop application that
-provides chess coaching tools for tournaments, players, and statistics.
-The application is built on a Rust backend with a JavaScript frontend.
+<br />
 
-## Repository Structure
+![Version](https://img.shields.io/badge/version-5.1.0-e63946?style=for-the-badge)
+![Platform](https://img.shields.io/badge/platform-Cross--Platform%20%7C%20Tauri-3ddc84?style=for-the-badge&logo=tauri&logoColor=white)
+![Built with Tauri](https://img.shields.io/badge/built%20with-Tauri-24c8db?style=for-the-badge&logo=tauri&logoColor=white)
+![Vite](https://img.shields.io/badge/bundled%20with-Vite-646cff?style=for-the-badge&logo=vite&logoColor=white)
+<br />
+![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776ab?style=for-the-badge&logo=python&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-f7df1e?style=for-the-badge&logo=javascript&logoColor=white)
+
+<br />
+
+[About](#-about) · [Repository Structure](#-repository-structure) · [Development](#-development) · [Tools](#-tools) · [License](#-license)
+
+</div>
+
+---
+
+## 🏁 About
+
+Chess Coach Utility (CCU) is a Tauri-based desktop application that provides chess coaching tools for tournaments, players, and statistics. The application is built on a Rust backend with a JavaScript frontend.
+
+## 📁 Repository Structure
 
 ```
 .
@@ -27,8 +49,7 @@ The application is built on a Rust backend with a JavaScript frontend.
 │       Local patched copy of tauri-plugin-google-auth
 ├── tools/                   Developer tools and utilities
 │   ├── rust_utils/          Rust build/verification utilities
-│   ├── scripts/             Python utility scripts
-│   └── cpp_utils/           C++ utility library
+│   └── scripts/             Python utility scripts
 ├── docs/                    Documentation
 ├── tests/                   Test suites
 ├── package.json             Frontend package configuration
@@ -43,7 +64,7 @@ The application is built on a Rust backend with a JavaScript frontend.
 > developer tooling. A functional application cannot be built from this
 > repository alone.
 
-## Development
+## 🛠️ Development
 
 ### Prerequisites
 
@@ -81,9 +102,6 @@ cd src-tauri && cargo check
 # Build the Rust utilities
 cd tools/rust_utils && cargo build
 
-# Build the C++ utilities
-cd tools/cpp_utils && cmake . && make
-
 # Frontend build
 cd /project/root && npm run build
 ```
@@ -102,7 +120,7 @@ cd tools/rust_utils && cargo test
 python tools/scripts/test_runner.py --filter rust
 ```
 
-## Tools
+## 🔧 Tools
 
 ### Rust Utilities (`tools/rust_utils/`)
 
@@ -122,22 +140,7 @@ cd tools/rust_utils && cargo run -- verify --all
 | `tournament_analyzer.py` | PGN tournament data analysis |
 | `data_migration.py` | Data schema migration tool |
 
-### C++ Utilities (`tools/cpp_utils/`)
-
-The C++ utility library provides:
-
-- **PGN Parser**: Parses and validates PGN chess game notation files
-- **Binary Reader**: Reads/writes the CCUDB binary database format
-- **Pairing Engine**: Swiss and round-robin tournament pairing algorithms
-- **Data Compressor**: RLE, Huffman, and simple deflate compression
-
-```bash
-cd tools/cpp_utils
-cmake . && make
-./cgd_cli --games tournament.pgn --report
-```
-
-## License
+## 📄 License
 
 Copyright &copy; 2026 Armiel Pillay. All rights reserved.
 
