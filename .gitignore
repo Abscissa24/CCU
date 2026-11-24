@@ -19,6 +19,11 @@ tools/cpp_utils/cmake-build-*/
 tools/rust_utils/target/
 target/
 
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+
 # Cargo
 Cargo.lock
 
