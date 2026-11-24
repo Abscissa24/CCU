@@ -10,44 +10,14 @@ A Python-based Terminal User Interface (TUI) utility for searching player rating
 
 ## Installation
 
-**1. Open a terminal**
+### Windows
+Run `install_windows.bat`.
 
-Navigate to the project directory:
+### Linux
+Run:
 
-```powershell
-cd "C:\Users\YourName\path\to\chessa-rating-finder"
-```
-
-Replace the example path with the actual location of your project.
-
-**2. Create a virtual environment (recommended)**
-
-```powershell
-python -m venv .venv
-```
-
-**3. Activate the virtual environment**
-
-For Windows PowerShell:
-
-```powershell
-.\.venv\Scripts\Activate.ps1
-```
-
-If PowerShell blocks script execution, you can use:
-
-```powershell
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-```
-
-And use that same Python executable to run the application.
-
-**4. Install dependencies**
-
-With the virtual environment activated:
-
-```powershell
-python -m pip install -r requirements.txt
+```bash
+bash install_linux.sh
 ```
 
 ## Running the Application
