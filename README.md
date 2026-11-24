@@ -6,7 +6,7 @@
 
 **Chess coaching. Tournament management. Player development.**
 
-Cross-platform desktop tooling for chess coaches, tournament directors, and player development — built on a Rust backend with a JavaScript frontend.
+Cross-platform desktop tooling for chess coaches, tournament directors, and player development.
 
 <br />
 
@@ -29,7 +29,7 @@ Cross-platform desktop tooling for chess coaches, tournament directors, and play
 
 ## 🏁 About
 
-Chess Coach Utility (CCU) is a Tauri-based desktop application that provides chess coaching tools for tournaments, players, and statistics. The application is built on a Rust backend with a JavaScript frontend.
+Chess Coach Utility (CCU) is a cross-platform application that provides chess tools for coaches, admins, and tournament organisers.
 
 ## 📁 Repository Structure
 
